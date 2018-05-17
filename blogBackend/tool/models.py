@@ -4,9 +4,8 @@
 import os
 
 from django.db import models
-from tools.storage import PathAndRename
-
-from blogBackend.tools.filesize import convert_size
+from tool.storage import PathAndRename
+from tool.filesize import convert_size
 
 
 class Upload(models.Model):

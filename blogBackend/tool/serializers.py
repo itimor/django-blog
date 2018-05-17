@@ -3,7 +3,7 @@
 
 from rest_framework import serializers
 
-from blogBackend.tools.models import Upload, FileUpload
+from tool.models import Upload, FileUpload
 
 
 class UploadSerializer(serializers.ModelSerializer):

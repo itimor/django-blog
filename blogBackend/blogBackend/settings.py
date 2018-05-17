@@ -18,6 +18,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',  # 过滤
     'corsheaders',  # 跨域
+    'blog',
+    'tool'
 ]
 
 MIDDLEWARE = [
@@ -56,12 +58,8 @@ WSGI_APPLICATION = 'blogBackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bind',
-        'USER': 'bind',
-        'PASSWORD': 'kX&^!^V!Is',
-        'HOST': '127.0.0.1',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, '../blog.db'),
     }
 }
 
@@ -109,8 +107,7 @@ MEDIA_URL = '/upload/'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
-        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',

@@ -3,9 +3,8 @@
 
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
-from tools.models import Upload, FileUpload
-
-from blogBackend.tools.serializers import UploadSerializer, FileUploadSerializer
+from tool.models import Upload, FileUpload
+from tool.serializers import UploadSerializer, FileUploadSerializer
 
 
 class UploadViewSet(viewsets.ModelViewSet):
