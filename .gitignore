@@ -1,0 +1,14 @@
+*.pyc
+.idea/
+.DS_Store
+.python-version
+upload/
+migrations/
+*.log
+*.out
+node_modules/
+package-lock.json
+*.db
+.vscode/
+dnsapi_key.py
+omsBackend/zbmanager/zabbix_conf.py
