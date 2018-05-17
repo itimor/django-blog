@@ -1,1 +1,1 @@
-# flask-blog
+# django-blog
