@@ -15,7 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'django_filters',  # 过滤
     'corsheaders',  # 跨域
     'blog',
@@ -33,7 +32,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'blogBackend.urls'
+ROOT_URLCONF = 'djangoBlog.urls'
 
 TEMPLATES = [
     {
@@ -51,7 +50,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blogBackend.wsgi.application'
+WSGI_APPLICATION = 'djangoBlog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -59,7 +58,7 @@ WSGI_APPLICATION = 'blogBackend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../blog.db'),
+        'NAME': os.path.join(BASE_DIR, 'blog.db'),
     }
 }
 
@@ -95,30 +94,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
-# Add for vuejs
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "../blogFrontend/dist/static"),
-]
+STATIC_URL = '/statics/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "statics"),
+)
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '../upload')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 MEDIA_URL = '/upload/'
-
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-    'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend',
-        'rest_framework.filters.SearchFilter',
-        'rest_framework.filters.OrderingFilter',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-}
-
-CORS_ORIGIN_ALLOW_ALL = True

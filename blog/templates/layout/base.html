@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/statics/image/favicon.png">
+    <title>
+        itimor's blog
+        {% block title %}
+        {% endblock %}
+    </title>
+    <meta name="description" content="itimor django blog python"/>
+    <meta name="keywords" content="itimor django blog python"/>
+    <link href="/statics/css/index.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+{% block header %}
+    {% include './header.html' %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+<div class="clearfloat"></div>
+{% block footer %}
+    {% include './footer.html' %}
+{% endblock %}
+</body>
+</html>

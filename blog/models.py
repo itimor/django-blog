@@ -5,18 +5,18 @@ import datetime
 from django.db import models
 from uuslug import slugify
 
-BlogTypes = {
-    0: '星辰大海',
-    1: '旅行',
-    2: '碎碎念'
-}
+BlogTypes = (
+    ('l', '星辰大海'),
+    ('j', '旅行'),
+    ('w', '碎碎念'),
+)
 
 
 class Article(models.Model):
     name = models.CharField(u'标题', max_length=150, unique=True)
     slug = models.SlugField(u'链接', default='#', null=True, blank=True)
     # cover = models.ImageField(u'封面', upload_to='cover', blank=True, storage=ImageStorage())
-    type = models.CharField(max_length=1, choices=BlogTypes.items(), default=0, verbose_name=u'类型')
+    type = models.CharField(max_length=1, choices=BlogTypes, default='l', verbose_name=u'类型')
     content = models.TextField(u'内容', )
     create_time = models.DateTimeField(u'创建时间', auto_now_add=True)
     update_time = models.DateTimeField(u'修改时间')
@@ -43,6 +43,9 @@ class Article(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return 'post/%s' % self.slug
 
 
 class Tag(models.Model):
