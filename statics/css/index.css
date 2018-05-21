@@ -1278,7 +1278,6 @@ input[type="search"]::-webkit-search-decoration {
 #main {
     background: #fff;
     position: relative;
-    z-index: 2
 }
 
 .container {
@@ -4317,7 +4316,7 @@ nav#comments-navi {
     .navi {
         position: fixed;
         height: 100%;
-        text-align: center
+        text-align: center;
     }
 
     .navbar {
@@ -4332,7 +4331,8 @@ nav#comments-navi {
     }
 
     .bt-nav.scrolled {
-        background: rgba(0, 0, 0, 0.5);
+        background-image: url("../images/favicon.png");
+        background-size: 40px 40px;
         border-radius: 50%;
         width: 40px;
         height: 40px;
@@ -4342,9 +4342,8 @@ nav#comments-navi {
     }
 
     .bt-nav.scrolled .line {
-        width: 5px;
-        height: 5px;
-        margin-left: -3px
+        width: 0;
+        height: 0;
     }
 
     .hebin {
