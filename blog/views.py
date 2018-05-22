@@ -65,3 +65,16 @@ class BlogDetailView(DetailView):
         context['prev_post'] = prev_post
         context['next_post'] = next_post
         return context
+
+
+class ArchiveView(ListView):
+    """
+    首页
+    """
+    template_name = 'archive.html'
+    context_object_name = "posts"
+    queryset = Article.objects.filter(published=True)
+
+    def get_context_data(self, **kwargs):
+        context = super(ArchiveView, self).get_context_data(**kwargs)
+        return context

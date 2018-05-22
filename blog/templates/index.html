@@ -1,120 +1,145 @@
 {% extends "layout/base.html" %}
 
 {% block title %}
-    | 首页
+| 首页
 {% endblock %}
 
 {% block content %}
 <div id="main" class="content">
     <div class="container">
-        <section class="post_content">
-            <header class="post_header">
-                <h1 class="post_title">更新</h1>
-            </header>
-            <div class="applicant__timeline">
-                <ul>
-                    <li>
-                        <div>版本正式更新至 3.7 ！<br/><span class="time-ago">2017.12.25</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复站点 favicon 图标在非主页不显示的情况</div>
-                    </li>
-                    <li class="success">
-                        <div>替换头部为jQuery粒子效果<br/><span class="time-ago">2017.12.20</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复文章置顶图标在非动效环境下错位</div>
-                    </li>
-                    <li class="warning">
-                        <div>修复图像滤镜溢出情况</div>
-                    </li>
-                    <li class="success">
-                        <div>优化主页的图像文章形式获取缩略图数量逻辑<br/><span class="time-ago">2017.09.28</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复个别用户提及的伪静态下评论翻页失效状况</div>
-                    </li>
-                    <li class="warning">
-                        <div>修复主页图像文章“Pics”错位及底部微信二维码错位状况</div>
-                    </li>
-                    <li class="success">
-                        <div>更新相册插件，实现多图多栏自适<br/><span class="time-ago">2017.08.31</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复长久被忽视的 SEO 问题及优化</div>
-                    </li>
-                    <li class="warning">
-                        <div>修复夸克等基于 U4 内核浏览器内页脚显示缺失状况</div>
-                    </li>
-                    <li class="success">
-                        <div>更新移动设备效果<br/><span class="time-ago">2017.08.05</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复 AOS 特效引起的评论无响应情况</div>
-                    </li>
-                    <li>
-                        <div>版本正式更新至 3.6 ！<br/><span class="time-ago">2017.07.30</span></div>
-                    </li>
-                    <li class="success">
-                        <div>重构标准、图像、状态样式及对应的移动端适应效果<br/><span class="time-ago">2017.07.28</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复 v3.5 本地调试仪表盘出现的评论模块数据回调的 bug 提示</div>
-                    </li>
-                    <li class="success">
-                        <div>新增 Ajax 搜索功能，同时支持原来的搜索使用形式<br/><span class="time-ago">2017.07.08</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复手机端菜单不响应的问题</div>
-                    </li>
-                    <li class="success">
-                        <div>更新部分排版样式、增加文章标签自动关联生成关键词链接<br/><span class="time-ago">2017.06.20</span></div>
-                    </li>
-                    <li>
-                        <div>版本正式更新至 3.5 ！<br/><span class="time-ago">2017.06.11</span></div>
-                    </li>
-                    <li class="success">
-                        <div>重建WP自带的外部和内部引用链接功能和美化样式<br/><span class="time-ago">2017.06.11</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复A链接在主页Ajax无限加载后缺失的情况</div>
-                    </li>
-                    <li class="success">
-                        <div>优化主页和内容页部分JS加载逻辑、优化缩略图。<br/><span class="time-ago">2016.11.18</span></div>
-                    </li>
-                    <li class="success">
-                        <div>新增头部波浪特效，可后台设置关闭；调整主页经典布局错位问题<br/><span class="time-ago">2016.11.13</span></div>
-                    </li>
-                    <li class="success">
-                        <div>新增上一篇下一篇文章链接，后台开关设置。<br/><span class="time-ago">2016.11.10</span></div>
-                    </li>
-                    <li class="success">
-                        <div>新增缩略图文章经典样式后台开关<br/><span class="time-ago">2016.11.02</span></div>
-                    </li>
-                    <li>
-                        <div>版本正式更新至 3.1 ！<br/><span class="time-ago">2016.11.02</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复菜单在移动端错位的情况，修改移动端搜索样式</div>
-                    </li>
-                    <li class="success">
-                        <div>新增二级菜单支持，调整部分动效<br/><span class="time-ago">2016.10.2</span></div>
-                    </li>
-                    <li class="warning">
-                        <div>修复首页相册底部溢出、修复移动设备标题错位，修复状态样式错位</div>
-                    </li>
-                    <li class="success">
-                        <div>新建文章样式标准、状态、相册、增加暗箱效果<br/><span class="time-ago">2016.9.21</span></div>
-                    </li>
-                    <li class="success">
-                        <div>构建层级评论系统，多层级嵌套，redesigned评论样式<br/><span class="time-ago">2016.9.20</span></div>
-                    </li>
-                    <li>
-                        <div>重新搭建Wp平台，重构：重写框架、重构排版、重构评论<br/><span class="time-ago">2016.9.16</span></div>
-                    </li>
-                </ul>
+        <article itemscope="itemscope">
+            <div class="posts-list js-posts">
+                <div class="post post-layout-list" data-aos="fade-up">
+                    <div class="status_list_item icon_kyubo">
+                        <div class="status_user"
+                             style="background-image: url(/statics/images/tmp/b0ce3f3cde0c084b6d42321b2dcbc407.jpeg);">
+                            <div class="status_section">
+                                <a href="detail.html" class="status_btn">交代是不可能交代的</a>
+                                <p class="section_p">
+                                    相隔上一次的更新我掰手指数一数，下意识的双腿一软，给各位小哥哥小姐姐们跪下了。自从有了对象后，周末几乎落下了主题的进度（邪魅的笑）。一边开发新的主题，一边收集您们给我反馈回来的"臭虫"，还有新的主题后台看见了一些大神在... </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post post-layout-list" data-aos="fade-up">
+                    <div class="postnormal review ">
+                        <div class="post-container review-item">
+                            <div class="row review-item-wrapper">
+                                <div class="col-sm-3">
+                                    <a rel="nofollow" href="detail.html">
+                                        <div class="review-item-img"
+                                             style="background-image: url(/statics/images/tmp/diego-ph-249471-2-800x1000.jpg);"></div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-9 flex-xs-middle">
+                                    <div class="review-item-title">
+                                        <a href="detail.html" rel="bookmark">我才不会写年终总结之瞎说篇</a>
+                                    </div>
+                                    <div class="review-item-creator"><b>发布日期：</b>2017-12-30</div>
+                                    <span class="review-item-info"><b>总浏览量：</b>1203 reads</span>
+                                </div>
+                            </div>
+                            <div class="review-bg-wrapper">
+                                <div class="bg-blur"
+                                     style="background-image: url(/statics/images/tmp/diego-ph-249471-2-800x1000.jpg);"></div>
+                            </div>
+                        </div>
+                        <div class="post-container">
+                            <div class="entry-content">
+                                确实讨厌去写所谓的年终总结，在公司已经被动的想领导上交一个总结，自己就懒得去总结，不然，我觉得脑子里应该会编写出八九不离十的内容，所以正经八儿的事情略了，瞎说一下。
+                                年初的人事调动是个人最不能接受的事情，但不接受也得接受，老板一句“这是命令...
+                            </div>
+                            <div class="post-footer">
+                                <a class="gaz-btn primary" href="">READ MORE</a>
+                                <span class="total-comments-on-post pull-right"><a href="">31 Comments</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post post-layout-list" data-aos="fade-up">
+                    <div class="status_list_item icon_kyubo">
+                        <div class="status_user"
+                             style="background-image: url(/statics/images/tmp/b0ce3f3cde0c084b6d42321b2dcbc407.jpeg);">
+                            <div class="status_section">
+                                <a href="detail.html" class="status_btn">状态</a>
+                                <p class="section_p">因为我这后半年飘忽不定的更新节奏，感觉真的对不住用户。最近才松下来能处理反馈的bug，顺便加快新主题 Dcras
+                                    的制作，农历年后或许能上线，准确时间，不敢说-- 为了感谢大家对 Yarn 的支持，Dcras 会以 获兑现码半价的承诺 给 Yarn ... </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post post-layout-list js-gallery" data-aos="fade-up">
+                    <div class="post-album">
+                        <div class="row content">
+                            <div class="bg" style="background-image: url(/statics/images/tmp/IMG_0150.jpg);"></div>
+                            <div class="contentext flex-xs-middle">
+                                <div class="album-title">
+                                    <a href="detail.html">重构图像样式测试</a>
+                                </div>
+                                <h5 class="review-item-creator"><b>发布日期：</b>2017-11-13</h5>
+                                <div class="album-content">如眼所见是一个图像样式，必须写五十左右的文字作为这个文本框的空白填充，不写也是可以的，强迫症不能容忍空白。</div>
+                            </div>
+                            <div class="album-thumb-width flex-xs-middle">
+                                <div class="row album-thumb no-gutter">
+                                    <div class="col-xs-4"><img class="thumb" src="/statics/images/tmp/IMG_0150-250x250.jpg"/>
+                                    </div>
+                                    <div class="col-xs-4"><img class="thumb" src="/statics/images/tmp/IMG_0149-250x250.jpg"/>
+                                    </div>
+                                    <div class="col-xs-4"><img class="thumb" src="/statics/images/tmp/IMG_0146-250x250.jpg"/>
+                                    </div>
+                                    <div class="col-xs-4"><img class="thumb" src="/statics/images/tmp/IMG_0147-250x250.jpg"/>
+                                    </div>
+                                    <div class="col-xs-4"><img class="thumb" src="/statics/images/tmp/IMG_0148-250x250.jpg"/>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <a href="">5 pics</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post post-layout-list" data-aos="fade-up">
+                    <div class="postnormal review ">
+                        <div class="post-container review-item">
+                            <div class="row review-item-wrapper">
+                                <div class="col-sm-3">
+                                    <a rel="nofollow" href="detail.html">
+                                        <div class="review-item-img"
+                                             style="background-image: url(/statics/images/tmp/47fb3c_9afed6c259f94589881bd55376206366mv2_d_3840_5784_s_4_2-800x450.jpg);"></div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-9 flex-xs-middle">
+                                    <div class="review-item-title">
+                                        <a href="detail.html" rel="bookmark">给大家介绍一下</a>
+                                    </div>
+                                    <div class="review-item-creator"><b>发布日期：</b>2017-10-02</div>
+                                    <span class="review-item-info"><b>总浏览量：</b>1600 reads</span>
+                                </div>
+                            </div>
+                            <div class="review-bg-wrapper">
+                                <div class="bg-blur"
+                                     style="background-image: url(/statics/images/tmp/47fb3c_9afed6c259f94589881bd55376206366mv2_d_3840_5784_s_4_2-800x450.jpg);"></div>
+                            </div>
+                        </div>
+                        <div class="post-container">
+                            <div class="entry-content">现在的明星的影响力足以影响国内娱乐圈的"半壁江山"，发条微博，新浪都恐慌好几天，来来来，蹭个热点给大家介绍一下我的女朋友。
+                            </div>
+                            <div class="post-footer">
+                                <a class="gaz-btn primary" href="detail.html">READ MORE</a>
+                                <span class="total-comments-on-post pull-right"><a href="">30 Comments</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+            <!-- post-formats end Infinite Scroll star -->
+            <!-- post-formats -->
+            {% block pagination %}
+                {% include './layout/pagination.html' %}
+            {% endblock %}
+            <!-- -pagination  -->
+        </article>
     </div>
 </div>
 {% endblock %}

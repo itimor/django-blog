@@ -2,7 +2,7 @@
 # author: itimor
 
 from django.conf.urls import url
-from blog.views import IndexView, BlogDetailView
+from blog.views import IndexView, BlogDetailView, ArchiveView
 
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='blog_list'),
@@ -13,5 +13,5 @@ urlpatterns = [
     # url(r'^repository/(?P<pk>[0-9]+)$', RepositoryDetailView.as_view()),
     # url(r'^tags/(?P<slug>[\w\u4e00-\u9fa5]+)$', TagListView.as_view()),
     # url(r'^category/(?P<slug>[\w\u4e00-\u9fa5]+)$', CategoryListView.as_view()),
-    # url(r'^author/(?P<pk>[0-9]+)$', AuthorPostListView.as_view())
+    url(r'^archive/', ArchiveView.as_view())
 ]
