@@ -79,7 +79,7 @@ document.body.addEventListener('touchstart', function () {
         });
 
         // Menu mobile view
-        $('.main-navigation li.page_item_has_children, .main-navigation li.menu-item-has-children').prepend('<span class="menu-dropdown"><i class="iconfont">&#xe619;</i></span>');
+        $('.main-navigation li.page_item_has_children, .main-navigation li.menu-item-has-children').prepend('<span class="menu-dropdown"><img src="/statics/images/svg/drop-down.svg"></span>');
         // Mobile nav button functionality
         $('.menu-dropdown').bind('click', function () {
             $(this).parent().toggleClass('open-page-item');
