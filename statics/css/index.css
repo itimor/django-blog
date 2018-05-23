@@ -5027,7 +5027,8 @@ nav#comments-navi {
 a,
 #error,
 .navbar ul li.current-menu-ancestor > a,
-li.active > a {
+li.active > a,
+li >a:hover{
     color: #33c5c5;
 }
 
