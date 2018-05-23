@@ -1,0 +1,38 @@
+<div class="post post-layout-list" data-aos="fade-up">
+    <div class="postnormal review">
+        <div class="post-container review-item">
+            <div class="row review-item-wrapper">
+                <div class="col-sm-3">
+                    <a rel="nofollow" href="{{ post.get_absolute_url }}">
+                        <div class="review-item-img"
+                             style="background-image: url(/statics/images/tmp/l.jpg);"></div>
+                    </a>
+                </div>
+                <div class="col-sm-9 flex-xs-middle">
+                    <div class="review-item-title">
+                        <a href="{{ post.get_absolute_url }}">{{ post.name }}</a>
+                    </div>
+                    <div class="review-item-creator"><b>发布日期：</b>{{ post.created_time }}</div>
+                    <span class="review-item-info"><b>总浏览量：</b>{{ post.access_count }}</span>
+                </div>
+            </div>
+            <div class="review-bg-wrapper">
+                <div class="bg-blur"
+                     style="background-image: url(/statics/images/tmp/l.jpg);"></div>
+            </div>
+        </div>
+        <div class="post-container">
+            <div class="entry-content">
+                {{ post.content }}
+            </div>
+            <div class="post-footer">
+                <div class="review-item-tag"><b>标签：</b>
+                    {% for tag in  post.tags.all %}
+                        <a class="tag">{{tag.name}}</a>
+                    {% endfor %}
+                </div>
+                <a class="gaz-btn primary pull-right" href="">READ MORE</a>
+            </div>
+        </div>
+    </div>
+</div>

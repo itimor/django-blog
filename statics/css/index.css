@@ -1366,10 +1366,6 @@ input[type="search"]::-webkit-search-decoration {
     margin-bottom: 4px
 }
 
-.posts-list a {
-    color: inherit
-}
-
 .posts-list > li {
     list-style: none;
     position: relative
@@ -1483,11 +1479,10 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .status_btn {
-    width: auto;
     font-size: 20px;
     font-weight: 700;
-    display: block;
-    position: relative
+    display: inline-block;
+    padding-bottom: 20px;
 }
 
 .status_section {
@@ -1551,7 +1546,7 @@ input[type="search"]::-webkit-search-decoration {
 .post {
     position: relative;
     max-width: 800px;
-    margin: 0 auto 120px
+    margin: 0 auto 30px
 }
 
 .postnormal.review {
@@ -1564,7 +1559,7 @@ input[type="search"]::-webkit-search-decoration {
     overflow: visible;
     margin-top: 1.5em;
     border-radius: 6px 6px 0 0;
-    min-height: 200px
+    min-height: 170px
 }
 
 .postnormal.review .post-container {
@@ -1624,6 +1619,20 @@ input[type="search"]::-webkit-search-decoration {
     display: block;
     font-size: 1em;
     opacity: .8
+}
+
+.review-item-tag{
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0.5em 0;
+    display: inline-block;
+}
+
+.review-item-tag > a {
+    font-size: 13px;
+    padding: 3px;
+    border: solid 1px;
+    border-radius: 10px;
 }
 
 .review-bg-wrapper {
@@ -1697,25 +1706,16 @@ input[type="search"]::-webkit-search-decoration {
     background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(105, 105, 105, 0.1) 100%)
 }
 
-.gaz-btn.primary {
-    background: #2E60C4
-}
-
 .gaz-btn {
     font-size: .8em;
     font-weight: 700;
-    padding: 12px 25px;
-    text-transform: uppercase;
-    color: white !important;
+    padding: 8px 10px;
+    color: white;
     border-radius: 30px;
-    border: none;
-    -webkit-transition: all .2s;
-    transition: all .2s;
-    display: inline-block
 }
 
 .pull-right {
-    float: right
+    float: right;
 }
 
 .flex-xs-middle {
@@ -4228,10 +4228,6 @@ nav#comments-navi {
         font-size: 16px;
     }
 
-    .post {
-        margin: 0 auto 60px !important;
-    }
-
     #primary-menu {
         display: block;
         float: none
@@ -4408,10 +4404,6 @@ nav#comments-navi {
     .sticky,
     .review-item-img {
         display: none;
-    }
-
-    .bg-blur {
-        background-position: center;
     }
 
     .row {
@@ -5007,7 +4999,7 @@ nav#comments-navi {
 .statusicon,
 .red .mediain,
 .gaz-btn.primary {
-    background: #bebbaa;
+    background: #2a8594;
 }
 
 .red .pointyTip,
@@ -5021,7 +5013,7 @@ a,
 .navbar ul li.active > a,
 .pagination i,
 .page-numbers.current {
-    color: #06b2b3;
+    color: #33c5c5;
 }
 
 .posts-list a:hover,
@@ -5030,7 +5022,7 @@ a,
 .comment h4 a:hover,
 .comment .comment-reply-link:hover,
 .welcome span:hover {
-    color: #bebbaa;
+    color: #7fb52b;
 }
 
 .color {

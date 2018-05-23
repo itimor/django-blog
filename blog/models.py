@@ -7,8 +7,8 @@ from uuslug import slugify
 
 BlogTypes = (
     ('l', '星辰大海'),
-    ('j', '旅行'),
-    ('w', '碎碎念'),
+    ('j', '碎碎念'),
+    ('w', '旅行'),
 )
 
 
