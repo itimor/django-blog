@@ -5,7 +5,7 @@
                 <div class="col-sm-3">
                     <a rel="nofollow" href="{{ post.get_absolute_url }}">
                         <div class="review-item-img"
-                             style="background-image: url(/statics/images/tmp/l.jpg);"></div>
+                             style="background-image: url(upload/{{ post.cover }});"></div>
                     </a>
                 </div>
                 <div class="col-sm-9 flex-xs-middle">
@@ -17,8 +17,7 @@
                 </div>
             </div>
             <div class="review-bg-wrapper">
-                <div class="bg-blur"
-                     style="background-image: url(/statics/images/tmp/l.jpg);"></div>
+                <div class="bg-blur" style="background-image: url(upload/{{ post.cover }});"></div>
             </div>
         </div>
         <div class="post-container">

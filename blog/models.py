@@ -2,10 +2,11 @@
 # author: itimor
 
 import datetime
+
+from django.conf import settings
 from django.db import models
 from uuslug import slugify
-from utils.storage import ImageStorage
-from django.conf import settings
+from blog.storage import PathAndRename
 
 BlogTypes = (
     ('l', '星辰大海'),
@@ -17,7 +18,7 @@ BlogTypes = (
 class Article(models.Model):
     name = models.CharField(u'标题', max_length=150, unique=True)
     slug = models.SlugField(u'链接', default='#', null=True, blank=True)
-    cover = models.ImageField(u'封面', upload_to='cover', blank=True, storage=ImageStorage())
+    cover = models.ImageField(upload_to=PathAndRename("cover"), blank=True, verbose_name=u'封面')
     type = models.CharField(max_length=1, choices=BlogTypes, default='l', verbose_name=u'类型')
     content = models.TextField(u'内容', )
     create_time = models.DateTimeField(u'创建时间', auto_now_add=True)
@@ -52,13 +53,6 @@ class Article(models.Model):
     def increase_views(self):
         self.views += 1
         self.save(update_fields=['views'])
-
-    def img_view(self):
-        print(self.cover)
-        return u'<img src="%s" height="200px"/>' % (settings.MEDIA_URL + str(self.cover))
-
-    img_view.short_description = u'图片展示'
-    img_view.allow_tags = True
 
 
 class Tag(models.Model):
