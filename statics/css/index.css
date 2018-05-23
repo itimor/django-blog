@@ -5018,7 +5018,7 @@ nav#comments-navi {
 a,
 #error,
 .navbar ul li.current-menu-ancestor > a,
-.navbar ul li.current-menu-item > a,
+.navbar ul li.active > a,
 .pagination i,
 .page-numbers.current {
     color: #06b2b3;

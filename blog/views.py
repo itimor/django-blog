@@ -78,3 +78,42 @@ class ArchiveView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ArchiveView, self).get_context_data(**kwargs)
         return context
+
+
+class PhotoView(ListView):
+    """
+    首页
+    """
+    template_name = 'photo.html'
+    context_object_name = "posts"
+    queryset = Article.objects.filter(published=True)
+
+    def get_context_data(self, **kwargs):
+        context = super(PhotoView, self).get_context_data(**kwargs)
+        return context
+
+
+class LinkView(ListView):
+    """
+    首页
+    """
+    template_name = 'link.html'
+    context_object_name = "posts"
+    queryset = Article.objects.filter(published=True)
+
+    def get_context_data(self, **kwargs):
+        context = super(LinkView, self).get_context_data(**kwargs)
+        return context
+
+
+class GustView(ListView):
+    """
+    首页
+    """
+    template_name = 'gust.html'
+    context_object_name = "posts"
+    queryset = Article.objects.filter(published=True)
+
+    def get_context_data(self, **kwargs):
+        context = super(GustView, self).get_context_data(**kwargs)
+        return context

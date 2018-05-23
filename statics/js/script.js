@@ -54,6 +54,18 @@ document.body.addEventListener('touchstart', function () {
          delay: 100,
          } */);
 
+        // menu active
+        $(function () {
+            $("#primary-menu").find("li").each(function () {
+                var a = $(this).find("a:first");
+                if ($(a).attr("href") === location.pathname) {
+                    $(this).addClass("active");
+                } else {
+                    $(this).removeClass("active");
+                }
+            });
+        })
+
         // Menu	scrolled
         $(window).scroll(function () {
             var mask = $('.bt-nav');
