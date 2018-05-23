@@ -2318,6 +2318,7 @@ h2.archive-title span:after {
 
 .pagination li a {
     color: black;
+    padding: 5px;
 }
 
 .pagination li.active {
