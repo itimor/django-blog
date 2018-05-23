@@ -2321,9 +2321,13 @@ h2.archive-title span:after {
 }
 
 .pagination li.active {
-    padding: 0 3px;
-    border: solid 2px rgba(139, 139, 139, 0.17);
-    border-radius: 8px;
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 50%;
+    background: rgba(0, 0, 1, 0.15);
 }
 
 #infscr-loading {
