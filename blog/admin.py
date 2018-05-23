@@ -43,8 +43,8 @@ from django.db import models
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'type', 'published', 'create_time', 'publish_time', 'access_count')
-    list_filter = ('published', 'publish_time', 'access_count')
+    list_display = ('name', 'slug', 'type', 'published', 'create_time', 'publish_time', 'views')
+    list_filter = ('published', 'publish_time', 'views')
     fields = (
         'name',
         'content',

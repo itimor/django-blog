@@ -1,5 +1,4 @@
-<div class="pagination  js-pagination">
-    <div class="js-next pagination__load">
+<div class="pagination">
         <ul>
             {% if first %}
                 <li><a href="?page=1">1</a></li>
@@ -17,7 +16,7 @@
 
             {% endif %}
 
-            <li class="current"><a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+            <li class="active"><a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
 
             {% if right %}
 
@@ -35,5 +34,4 @@
                 <li><a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
             {% endif %}
         </ul>
-    </div>
 </div>

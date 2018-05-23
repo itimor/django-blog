@@ -1451,7 +1451,7 @@ input[type="search"]::-webkit-search-decoration {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    padding-bottom: 1.3rem;
+    padding-bottom: .8rem;
 }
 
 .info-post {
@@ -1570,7 +1570,7 @@ input[type="search"]::-webkit-search-decoration {
 .postnormal .post-container {
     background: white;
     margin-top: 10px;
-    padding: 1.3rem 1.3rem 2rem;
+    padding: .9rem 2rem;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -1621,18 +1621,20 @@ input[type="search"]::-webkit-search-decoration {
     opacity: .8
 }
 
-.review-item-tag{
+.review-item-tag {
     font-size: 1em;
     font-weight: normal;
-    padding: 0.5em 0;
     display: inline-block;
 }
 
+.review-item-tag > img {
+    vertical-align: middle;
+}
 .review-item-tag > a {
     font-size: 13px;
-    padding: 3px;
+    padding: 2px;
     border: solid 1px;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .review-bg-wrapper {
@@ -1790,8 +1792,8 @@ input[type="search"]::-webkit-search-decoration {
     box-shadow: 0 1px 3px rgba(249, 249, 249, 0.08), 0 0 0 1px rgba(26, 53, 71, .04), 0 1px 1px rgba(26, 53, 71, .06);
 }
 
-.post-footer .total-comments-on-post {
-    padding: 10px 0
+.post-footer {
+    padding: 10px 0 0
 }
 
 .post-title {
@@ -2307,11 +2309,21 @@ h2.archive-title span:after {
     display: block;
     text-align: center;
     width: 300px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
-.pagination i {
-    font-size: 40px
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a {
+    color: black;
+}
+
+.pagination li.active {
+    padding: 0 3px;
+    border: solid 2px rgba(139, 139, 139, 0.17);
+    border-radius: 8px;
 }
 
 #infscr-loading {
@@ -5010,9 +5022,7 @@ nav#comments-navi {
 a,
 #error,
 .navbar ul li.current-menu-ancestor > a,
-.navbar ul li.active > a,
-.pagination i,
-.page-numbers.current {
+li.active > a {
     color: #33c5c5;
 }
 

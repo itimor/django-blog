@@ -16,6 +16,7 @@ class IndexView(ListView):
     template_name = 'index.html'
     context_object_name = "posts"
     queryset = Article.objects.filter(published=True)
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
@@ -36,7 +37,6 @@ class IndexView(ListView):
 
         # 将分页导航条的模板变量更新到 context 中，注意 pagination_data 方法返回的也是一个字典。
         context.update(pagination_data)
-
         return context
 
 
@@ -55,7 +55,7 @@ class BlogDetailView(DetailView):
             raise PermissionDenied
 
         # 阅读数增1
-        context.access_count += 1
+        context.views += 1
         context.save(modified=False)
         return context
 

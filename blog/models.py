@@ -22,7 +22,7 @@ class Article(models.Model):
     update_time = models.DateTimeField(u'修改时间')
     published = models.BooleanField(u'发布', default=True)
     publish_time = models.DateTimeField(u'发布时间', null=True)
-    access_count = models.IntegerField(u'浏览量', default=1, editable=False)
+    views = models.PositiveIntegerField(u'浏览量', default=0)
     tags = models.ManyToManyField('Tag', related_name='tags', null=True, blank=True, verbose_name=u'标签')
 
     class Meta:
@@ -46,6 +46,10 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return 'post/%s' % self.slug
+
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])
 
 
 class Tag(models.Model):
