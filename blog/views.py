@@ -16,7 +16,7 @@ class IndexView(ListView):
     template_name = 'index.html'
     context_object_name = "posts"
     queryset = Article.objects.filter(published=True)
-    paginate_by = 1
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
