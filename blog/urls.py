@@ -6,8 +6,8 @@ from blog.views import IndexView, BlogDetailView, ArchiveView, PhotoView, LinkVi
 
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='blog_list'),
-    url(r"^post/(?P<pk>\d+)/(?P<slug>[\w,-]+)", BlogDetailView.as_view(), name="blog_detail"),
-    url(r'^archive', ArchiveView.as_view()),
+    url(r"^post/(?P<slug>[\w,-]+)", BlogDetailView.as_view(), name="blog_detail"),
+    url(r'^archive/', ArchiveView.as_view()),
     url(r'^photo', PhotoView.as_view()),
     url(r'^link', LinkView.as_view()),
     url(r'^gust', GustView.as_view()),

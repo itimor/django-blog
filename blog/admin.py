@@ -2,7 +2,7 @@
 # author: itimor
 
 from django.contrib import admin
-from blog.models import Article, Tag, Friend
+from blog.models import Article, Tag, Friend, Site
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -24,13 +24,18 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 class TagAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
+
 
 
 class FriendAdmin(admin.ModelAdmin):
     list_display = ('name', 'link', 'position', 'active')
 
 
+class SiteAdmin(admin.ModelAdmin):
+    list_display = ('name', 'url', 'position')
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Friend, FriendAdmin)
+admin.site.register(Site, SiteAdmin)

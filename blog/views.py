@@ -92,11 +92,13 @@ class ArchiveView(ListView):
     首页
     """
     template_name = 'archive.html'
-    context_object_name = "posts"
-    queryset = Article.objects.filter(published=True)
+    context_object_name = "archive_posts"
+    queryset = Article.objects.all().datetimes('publish_time', 'month', order='DESC')
+    # queryset = Article.objects.filter(published=True)
 
     def get_context_data(self, **kwargs):
         context = super(ArchiveView, self).get_context_data(**kwargs)
+        print(context)
         return context
 
 

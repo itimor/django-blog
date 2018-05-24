@@ -7,6 +7,7 @@ from re import sub
 import time
 import random
 
+
 @deconstructible
 class PathAndRename(object):
     def __init__(self, sub_path):

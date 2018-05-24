@@ -1551,15 +1551,14 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .postnormal.review {
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0 1px 3px rgba(249, 249, 249, 0.08), 0 0 0 1px rgba(26, 53, 71, .04), 0 1px 1px rgba(26, 53, 71, .06)
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(2, 0, 0, 0.1), 0 0 0 1px rgba(26, 53, 71, .04), 0 1px 1px rgba(26, 53, 71, .06)
 }
 
 .postnormal.review .review-item {
     position: relative;
     overflow: visible;
     margin-top: 1.5em;
-    border-radius: 6px 6px 0 0;
     min-height: 170px
 }
 
@@ -1646,7 +1645,7 @@ input[type="search"]::-webkit-search-decoration {
     right: 0;
     top: 0;
     bottom: 0;
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
     z-index: 0;
 }
 
@@ -1658,7 +1657,7 @@ input[type="search"]::-webkit-search-decoration {
     height: 100%;
     z-index: 0;
     background-size: cover;
-    border-radius: 6px;
+    border-radius: 5px;
     -webkit-filter: blur(5px);
     filter: blur(5px);
     -webkit-transform: scale(1.2);
@@ -1789,7 +1788,7 @@ input[type="search"]::-webkit-search-decoration {
 .post-album {
     margin-top: 10px;
     padding: 0 1.3rem 0;
-    border-radius: 6px;
+    border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 1px 3px rgba(249, 249, 249, 0.08), 0 0 0 1px rgba(26, 53, 71, .04), 0 1px 1px rgba(26, 53, 71, .06);
 }
@@ -1961,15 +1960,15 @@ input[type="search"]::-webkit-search-decoration {
     left: 31%;
     top: 0;
     pointer-events: none;
-    border-top: 1px solid #efefef;
-    border-bottom: 1px solid #efefef
+    border-top: 1px solid #ea34ef;
+    border-bottom: 1px solid #ea34ef
 }
 
 .post-body blockquote:after {
     width: 2%;
     left: 49%;
-    border-top: .2em solid #efefef;
-    border-bottom: .2em solid #efefef
+    border-top: .2em solid #ea34ef;
+    border-bottom: .2em solid #ea34ef
 }
 
 .post-body blockquote p {

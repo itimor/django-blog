@@ -86,3 +86,21 @@ class Friend(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Site(models.Model):
+    """
+    展示网站
+    """
+    name = models.CharField(u'名称', max_length=10, unique=True)
+    url = models.CharField(u'地址', max_length=50, unique=True)
+    ico = models.ImageField(upload_to=PathAndRename("ico"), blank=True, verbose_name=u'图标')
+    position = models.SmallIntegerField(u'位置', default=1)
+
+    class Meta:
+        ordering = ['position']
+        verbose_name = u'展示网站'
+        verbose_name_plural = u'展示网站'
+
+    def __str__(self):
+        return self.name
