@@ -635,7 +635,6 @@ h3 {
     font-size: 16px;
     line-height: 24px;
     margin-top: 24px;
-    margin-bottom: 20px;
 }
 
 h3 small {
@@ -3884,8 +3883,13 @@ nav#comments-navi {
 }
 
 #archives h3 {
-    padding-bottom: 10px;
     position: relative
+}
+
+#archives h2:before {
+    content: attr(text);
+    position: absolute;
+    left: -30px;
 }
 
 #archives h3:before {

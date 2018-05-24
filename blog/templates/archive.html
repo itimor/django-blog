@@ -13,19 +13,23 @@
             </header>
             <div class="post-Archive">
                 <div id="archives">
-                    {% regroup archive_posts by year as posts_by_year %}
+                    {% regroup archive_posts by publish_time.year as posts_by_year %}
                     <div class='archive-title'>
-                        {% for mouth in posts_by_year %}
-                        <h3>{{ mouth.grouper }}</h3>
-                            {% for d in mouth.list %}
-                        <div class='archives'>
-                            <div class="brick">
-                                <a href=""><span class="time">{{ d |date:'m-d' }}</span> {{ d }}</a>
-                            </div>
-                        </div>
+                        {% for year in posts_by_year %}
+                        <h2 text="{{ year.grouper }}"></h2>
+                            {% regroup year.list by publish_time.month as posts_by_month %}
+                                {% for month in posts_by_month %}
+                                    <h3>{{ month.grouper }}月 ({{month.list | length}})</h3>
+                                    {% for d in month.list %}
+                                        <div class='archives'>
+                                            <div class="brick">
+                                                <a href=""><span class="time">{{ d.publish_time |date:'m-d h:m' }}</span> {{ d.name }}</a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
                         {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
         </section>

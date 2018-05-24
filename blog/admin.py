@@ -27,13 +27,13 @@ class TagAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
 
-
 class FriendAdmin(admin.ModelAdmin):
     list_display = ('name', 'link', 'position', 'active')
 
 
 class SiteAdmin(admin.ModelAdmin):
     list_display = ('name', 'url', 'position')
+
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Tag, TagAdmin)
