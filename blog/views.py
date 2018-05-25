@@ -45,31 +45,22 @@ class BlogDetailView(DetailView):
     context_object_name = "post"
     queryset = Article.objects.filter(published=True)
 
-    def get(self, request, *args, **kwargs):
-        # 覆写 get 方法的目的是因为每当文章被访问一次，就得将文章阅读量 +1
-        # get 方法返回的是一个 HttpResponse 实例
-        # 之所以需要先调用父类的 get 方法，是因为只有当 get 方法被调用后，
-        # 才有 self.object 属性，其值为 Post 模型实例，即被访问的文章 post
-        response = super(BlogDetailView, self).get(request, *args, **kwargs)
-
-        # 将文章阅读量 +1
-        # 注意 self.object 的值就是被访问的文章 post
-        self.object.increase_views()
-
-        # 视图必须返回一个 HttpResponse 对象
-        return response
-
     def get_object(self, queryset=None):
         context = super(BlogDetailView, self).get_object(queryset)
 
         if not context.published:
             raise PermissionDenied
 
+        # 阅读数增1
+        context.views += 1
+        context.save(modified=False)
+
         md = markdown.Markdown(extensions=[
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
         ])
         context.content = md.convert(context.content)
+
         return context
 
     def get_context_data(self, **kwargs):

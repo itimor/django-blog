@@ -41,7 +41,7 @@ class Article(models.Model):
         if modified:
             self.update_time = datetime.datetime.utcnow()
 
-        if self.published:
+        if self.published and not self.publish_time:
             self.publish_time = datetime.datetime.utcnow()
 
         # 生成摘要
@@ -63,10 +63,6 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'slug': self.slug})
-
-    def increase_views(self):
-        self.views += 1
-        self.save(update_fields=['views'])
 
 
 class Tag(models.Model):

@@ -1,0 +1,70 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+| {{ post.name }}
+{% endblock %}
+
+{% block content %}
+<div id="main" class="content">
+    <div class="container">
+            <section class="post_content">
+                <header class="post_header">
+                    <h1 class="post_title">{{ post.name }}</h1>
+                </header>
+                <div class="post-body">
+                    {% autoescape off %}
+                        {{ post.content }}
+                    {% endautoescape %}
+                </div>
+                <div class="meta split split--responsive cf">
+                    <div class="split__title">
+                        <time>{{ post.publish_time|date:'Y-m-d' }}</time>
+                                            {% for tag in  post.tags.all %}
+                        <a href="/tag/{{tag.name}}" class="tag">{{tag.name}}</a>
+                    {% empty %}
+                        <a class="tag">未设置标签</a>
+                    {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+</div>
+
+<div class="navpost-part">
+    <div id="NextPrevPosts">
+        <div class="prev" data-aos="slide-right" data-aos-delay="1.5s">
+            <div class="arrow"><img src="/statics/images/svg/left.svg"></div>
+            <div class="preview">
+                {% if post.prev_post %}
+                    {% if post.prev_post.cover %}
+                        <div class="pull-left featuredImg" style="background-image:url(upload/{{ post.prev_post.cover }});"></div>
+                    {% else %}
+                        <div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
+                    {% endif %}
+                    <a class="pull-left preview-content bold" href="{{ post.prev_post.get_absolute_url }}"><span>{{ post.name }}</span></a>
+                {% else %}
+                    <div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
+                    <a class="pull-left preview-content bold" href="#"><span>海底月是天上月</span></a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="next" data-aos="slide-left" data-aos-delay="1.5s">
+            <div class="arrow"><img src="/statics/images/svg/right.svg"></div>
+            <div class="preview">
+                {% if post.next_post %}
+                    {% if post.next_post.cover %}
+                        <div class="pull-right featuredImg" style="background-image:url(upload/{{ post.next_post.cover }});"></div>
+                    {% else %}
+                        <div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
+                    {% endif %}
+                    <a class="pull-right preview-content bold" href="{{ post.next_post.get_absolute_url }}"><span>{{ post.next_post.name }}</span></a>
+                {% else %}
+                     <div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
+                    <a class="pull-right preview-content bold" href="#"><span>眼前人是心上人</span></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
