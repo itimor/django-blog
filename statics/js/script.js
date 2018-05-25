@@ -45,6 +45,7 @@ document.body.addEventListener('touchstart', function () {
 
     // 代码高亮
     hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
 
     $(document).ready(function () {
         App.init();
@@ -118,9 +119,6 @@ document.body.addEventListener('touchstart', function () {
                 for (var i = 0; i < result.length; i++) $("#search_filtered").append('<li><a href="' + result[i]["url"] + '">' + result[i]["title"] + '</a></li>');
             }
         };
-
-        // marked & heighlight
-        document.getElementsByClassName('.entry-content').innerHTML = marked('# Marked in browser\n\nRendered by **marked**.');
 
         var delaySearch;
 

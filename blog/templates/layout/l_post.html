@@ -29,7 +29,9 @@
         </div>
         <div class="post-container">
             <div class="entry-content">
-                {{ post.excerpt }}
+                {% autoescape off %}
+                    {{ post.excerpt }}
+                {% endautoescape %}
             </div>
             <div class="post-footer">
                 <div class="review-item-tag"><img src="/statics/images/svg/tag.svg">

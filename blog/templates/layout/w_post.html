@@ -8,7 +8,9 @@
                 </div>
                 <h5 class="review-item-creator"><b>发布日期：</b>{{ post.publish_time }}</h5>
                 <div class="entry-content">
+                {% autoescape off %}
                     {{ post.excerpt }}
+                {% endautoescape %}
                 </div>
             </div>
             <div class="album-thumb-width flex-xs-middle">

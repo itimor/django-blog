@@ -45,17 +45,16 @@ class Article(models.Model):
             self.publish_time = datetime.datetime.utcnow()
 
         # 生成摘要
+        # 获取readmore位置
+        readmore_index = self.content.find('-- readmore')
+
         md = markdown.Markdown(extensions=[
             'markdown.extensions.extra',
-            'markdown.extensions.codehilite',
+            'markdown.extensions.toc',
+            'markdown.extensions.headerid',
         ])
-        # 先将 Markdown 文本渲染成 HTML 文本
-        # strip_tags 去掉 HTML 文本的全部 HTML 标签
-        # 从文本摘取前 54 个字符赋给 excerpt
-        md_content = md.convert(self.content)
-        import re
-        comp = re.compile(r'<img .*?src=".+.ipg"/>')
-        self.excerpt = strip_tags(re.sub(comp, 'image', md_content))[:206]
+        # 截取readmore前的字符串作为摘要并用markdown渲染
+        self.excerpt = md.convert(self.content[:readmore_index])
 
         super(Article, self).save(*args, **kwargs)
 

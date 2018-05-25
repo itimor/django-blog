@@ -4,7 +4,9 @@
             <div class="status_section">
                 <a href="{{ post.get_absolute_url }}" class="status_btn">{{ post.name }}</a>
                 <div class="entry-content">
+                {% autoescape off %}
                     {{ post.excerpt }}
+                {% endautoescape %}
                 </div>
             </div>
         </div>
