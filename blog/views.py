@@ -69,8 +69,7 @@ class BlogDetailView(DetailView):
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
         ])
-        context.body = md.convert(context.body)
-        context.toc = md.toc
+        context.content = md.convert(context.content)
         return context
 
     def get_context_data(self, **kwargs):

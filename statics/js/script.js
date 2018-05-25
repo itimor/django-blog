@@ -43,6 +43,9 @@ document.body.addEventListener('touchstart', function () {
             }
         };
 
+    // 代码高亮
+    hljs.initHighlightingOnLoad();
+
     $(document).ready(function () {
         App.init();
 
@@ -104,42 +107,6 @@ document.body.addEventListener('touchstart', function () {
             return false;
         });
 
-        // Social share open botton
-        $("#social-share").click(function () {
-            $("#social").toggleClass("visible").slideToggle(200);
-        });
-
-        // Ajaxnvai
-        $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
-        $('#comments-navi a').live('click', function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: "GET",
-                url: $(this).attr('href'),
-                beforeSend: function () {
-                    $('#comments-navi').remove();
-                    $('ul.commentwrap').remove();
-                    $('#loading-comments').slideDown();
-                    $body.animate({scrollTop: $('#comments-list-title').offset().top - 65}, 800);
-                },
-                dataType: "html",
-                success: function (out) {
-                    result = $(out).find('ul.commentwrap');
-                    nextlink = $(out).find('#comments-navi');
-                    $('#loading-comments').slideUp('fast');
-                    $('#loading-comments').after(result.fadeIn(500));
-                    $('ul.commentwrap').after(nextlink);
-                }
-            });
-        });
-
-        if ($('.welcome')[0]) {
-            $('.author-info').hide();
-            $('span.info-edit').click(function () {
-                $('.author-info').toggle(200);
-            });
-        }
-
         // Make Ajax Search
         var input_search = $("#search-input");
 
@@ -150,7 +117,10 @@ document.body.addEventListener('touchstart', function () {
                 $("#search_filtered").empty().show();
                 for (var i = 0; i < result.length; i++) $("#search_filtered").append('<li><a href="' + result[i]["url"] + '">' + result[i]["title"] + '</a></li>');
             }
-        }
+        };
+
+        // marked & heighlight
+        document.getElementsByClassName('.entry-content').innerHTML = marked('# Marked in browser\n\nRendered by **marked**.');
 
         var delaySearch;
 

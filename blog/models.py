@@ -2,10 +2,12 @@
 # author: itimor
 
 import datetime
+import markdown
 from django.db import models
 from uuslug import slugify
 from blog.storage import PathAndRename
 from django.urls import reverse
+from django.utils.html import strip_tags
 
 BlogTypes = (
     ('l', '星辰大海'),
@@ -20,6 +22,7 @@ class Article(models.Model):
     cover = models.ImageField(upload_to=PathAndRename("cover"), blank=True, verbose_name=u'封面')
     type = models.CharField(max_length=1, choices=BlogTypes, default='l', verbose_name=u'类型')
     content = models.TextField(u'内容', )
+    excerpt = models.TextField(u'摘要', )
     create_time = models.DateTimeField(u'创建时间', auto_now_add=True)
     update_time = models.DateTimeField(u'修改时间')
     published = models.BooleanField(u'发布', default=True)
@@ -40,6 +43,19 @@ class Article(models.Model):
 
         if self.published:
             self.publish_time = datetime.datetime.utcnow()
+
+        # 生成摘要
+        md = markdown.Markdown(extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+        ])
+        # 先将 Markdown 文本渲染成 HTML 文本
+        # strip_tags 去掉 HTML 文本的全部 HTML 标签
+        # 从文本摘取前 54 个字符赋给 excerpt
+        md_content = md.convert(self.content)
+        import re
+        comp = re.compile(r'<img .*?src=".+.ipg"/>')
+        self.excerpt = strip_tags(re.sub(comp, 'image', md_content))[:206]
 
         super(Article, self).save(*args, **kwargs)
 

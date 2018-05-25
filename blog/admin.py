@@ -12,11 +12,12 @@ class ArticleAdmin(admin.ModelAdmin):
         'name',
         'cover',
         'content',
+        'excerpt',
         'type',
         'published',
         'tags',
     )
-
+    readonly_fields = ('excerpt',)
     exclude = ('publish_time',)
     search_fields = ('name', 'published')
     ordering = ('-create_time', 'published', 'publish_time')

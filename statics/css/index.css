@@ -2994,7 +2994,7 @@ nav#comments-navi {
 }
 
 #archives h2:before {
-    content: attr(text);
+    /*content: attr(text);*/
     position: absolute;
     left: -30px;
 }
