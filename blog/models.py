@@ -46,7 +46,7 @@ class Article(models.Model):
 
         # 生成摘要
         # 获取readmore位置
-        readmore_index = self.content.find('-- readmore')
+        readmore_index = self.content.find('--more--')
 
         md = markdown.Markdown(extensions=[
             'markdown.extensions.extra',

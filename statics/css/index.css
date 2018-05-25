@@ -1171,12 +1171,10 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .post-body blockquote {
-    font-size: 25px;
-    line-height: 36px;
     color: #888;
     clear: both;
     position: relative;
-    padding: 1em 0;
+    padding: .5em 0;
     margin: 1.62em 0;
     text-align: center
 }
@@ -1229,20 +1227,6 @@ input[type="search"]::-webkit-search-decoration {
 .format-lede .post-body > :first-child {
     font-weight: bold;
     color: #444
-}
-
-.post-share {
-    -webkit-transition: opacity 0.25s ease;
-    -moz-transition: opacity 0.25s ease;
-    -o-transition: opacity 0.25s ease;
-    transition: opacity 0.25s ease;
-    opacity: .5;
-    display: inline-block;
-    text-align: right
-}
-
-.post-share:hover {
-    opacity: 1
 }
 
 .meta,

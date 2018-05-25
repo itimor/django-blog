@@ -55,10 +55,14 @@ class BlogDetailView(DetailView):
         context.views += 1
         context.save(modified=False)
 
+        import re
+        re.sub(r'--more--', '', context.content)
+
         md = markdown.Markdown(extensions=[
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
         ])
+
         context.content = md.convert(context.content)
 
         return context

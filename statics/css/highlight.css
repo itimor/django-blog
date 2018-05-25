@@ -1,7 +1,7 @@
 /*
 Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
 */
-.codehilite {
+pre {
     display: block;
     overflow-x: auto;
     border-radius: 0.5em;

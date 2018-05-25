@@ -36,32 +36,33 @@
         <div class="prev" data-aos="slide-right" data-aos-delay="1.5s">
             <div class="arrow"><img src="/statics/images/svg/left.svg"></div>
             <div class="preview">
-                {% if post.prev_post %}
-                    {% if post.prev_post.cover %}
-                        <div class="pull-left featuredImg" style="background-image:url(upload/{{ post.prev_post.cover }});"></div>
+                {% if prev_post %}
+                    {% if prev_post.cover %}
+                        <div class="pull-left featuredImg" style="background-image:url(upload/{{ prev_post.cover }});"></div>
                     {% else %}
                         <div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
                     {% endif %}
-                    <a class="pull-left preview-content bold" href="{{ post.prev_post.get_absolute_url }}"><span>{{ post.name }}</span></a>
+                    <a class="pull-left preview-content bold" href="{{ prev_post.get_absolute_url }}"><span>{{ prev_post.name }}</span></a>
                 {% else %}
                     <div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
                     <a class="pull-left preview-content bold" href="#"><span>海底月是天上月</span></a>
                 {% endif %}
             </div>
         </div>
+        <hr/>
         <div class="next" data-aos="slide-left" data-aos-delay="1.5s">
             <div class="arrow"><img src="/statics/images/svg/right.svg"></div>
             <div class="preview">
-                {% if post.next_post %}
-                    {% if post.next_post.cover %}
-                        <div class="pull-right featuredImg" style="background-image:url(upload/{{ post.next_post.cover }});"></div>
+                {% if next_post %}
+                    {% if next_post.cover %}
+                        <div class="pull-right featuredImg" style="background-image:url(upload/{{ next_post.cover }});"></div>
                     {% else %}
                         <div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
                     {% endif %}
-                    <a class="pull-right preview-content bold" href="{{ post.next_post.get_absolute_url }}"><span>{{ post.next_post.name }}</span></a>
+                    <a class="pull-right preview-content bold" href="{{ next_post.get_absolute_url }}"><span>{{ next_post.name }}</span></a>
                 {% else %}
                      <div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
-                    <a class="pull-right preview-content bold" href="#"><span>眼前人是心上人</span></a>
+                    <a class="pull-right preview-content bold" href="#"><span>我也是有底线的</span></a>
                 {% endif %}
             </div>
         </div>
