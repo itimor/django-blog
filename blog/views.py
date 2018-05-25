@@ -9,6 +9,7 @@ from blog.models import Article, Tag, Friend
 from utils.pagination import get_pagination
 import markdown
 
+
 class IndexView(ListView):
     """
     首页
