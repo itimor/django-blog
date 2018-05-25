@@ -2,11 +2,10 @@
 # author: itimor
 
 import datetime
-
-from django.conf import settings
 from django.db import models
 from uuslug import slugify
 from blog.storage import PathAndRename
+from django.urls import reverse
 
 BlogTypes = (
     ('l', '星辰大海'),
@@ -48,7 +47,7 @@ class Article(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return '/post/%s' % self.slug
+        return reverse('blog:detail', kwargs={'slug': self.slug})
 
     def increase_views(self):
         self.views += 1
