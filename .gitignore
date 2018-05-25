@@ -10,4 +10,4 @@ migrations/
 .vscode/
 dnsapi_key.py
 omsBackend/zbmanager/zabbix_conf.py
-statics/
+staticfiles/
