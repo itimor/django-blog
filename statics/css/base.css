@@ -467,7 +467,7 @@ h6 {
 }
 
 a {
-    color: #807f83;
+    color: #7dc768;
     text-decoration: none
 }
 
@@ -477,7 +477,8 @@ a:hover {
 
 a:active,
 a:hover {
-    outline: 0
+    outline: 0;
+    color: #33c5c5!important;
 }
 
 hr {

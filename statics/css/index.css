@@ -1897,116 +1897,6 @@ section.right .bub {
     clear: both;
 }
 
-.btn,
-.wpcf7-submit,
-[id="submit"] {
-    display: inline-block;
-    vertical-align: middle;
-    font: inherit;
-    text-align: center;
-    border: none;
-    margin: 0;
-    cursor: pointer;
-    overflow: visible;
-    padding: 11px 23px;
-    background-color: #4a8ec2;
-    border: 1px solid #4a8ec2;
-    border-radius: 3px
-}
-
-.btn,
-.wpcf7-submit,
-[id="submit"],
-.btn:hover,
-.wpcf7-submit:hover,
-[id="submit"]:hover,
-.btn:active,
-.wpcf7-submit:active,
-[id="submit"]:active,
-.btn:focus,
-.wpcf7-submit:focus,
-[id="submit"]:focus {
-    text-decoration: none;
-    color: #fff
-}
-
-.btn::-moz-focus-inner,
-.wpcf7-submit::-moz-focus-inner,
-[id="submit"]::-moz-focus-inner {
-    border: 0;
-    padding: 0
-}
-
-.btn,
-.wpcf7-submit,
-[id="submit"] {
-    font-weight: bold;
-    -webkit-transition: background 0.333s ease, box-shadow .25s ease;
-    -moz-transition: background 0.333s ease, box-shadow .25s ease;
-    transition: background 0.333s ease, box-shadow .25s ease
-}
-
-[id="submit"],
-.wpcf7-submit,
-.btn--primary,
-[id="submit"] {
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 21px;
-    color: #fff;
-    border: none;
-    background: #4f94cb;
-    padding: 9px 24px;
-    font-weight: bold
-}
-
-[id="submit"]:hover,
-[id="submit"]:focus,
-.wpcf7-submit:hover,
-.wpcf7-submit:focus,
-.btn--primary:hover,
-[id="submit"]:hover,
-.btn--primary:focus,
-[id="submit"]:focus {
-    box-shadow: inset 0 -8em 0 rgba(255, 255, 255, 0.2);
-    color: #fff;
-    outline: none
-}
-
-[id="submit"]:active,
-.wpcf7-submit:active,
-.btn--primary:active,
-[id="submit"]:active {
-    color: #fff;
-    box-shadow: inset 0 -8em 0 rgba(0, 0, 0, 0.15);
-    outline: none
-}
-
-#comments-list-title {
-    max-width: 800px;
-    margin: 20px 0;
-    font-size: 20px;
-    font-weight: 700;
-    color: #918f90
-}
-
-.comments-main {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-form#commentform {
-    outline: 0
-}
-
-nav#comments-navi {
-    clear: both;
-    text-align: right;
-    max-width: 800px;
-    color: #9A9A9A;
-    padding-top: 20px;
-}
-
 .author-info input {
     margin: 0 0 20px;
     position: relative;
@@ -3053,11 +2943,9 @@ nav#comments-navi {
     border-top-color: #bebbaa;
 }
 
-a,
 #error,
 .navbar ul li.current-menu-ancestor > a,
-li.active > a,
-a:hover {
+li.active > a{
     color: #33c5c5;
 }
 
