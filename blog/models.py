@@ -48,7 +48,7 @@ class Article(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return 'post/%s' % self.slug
+        return '/post/%s' % self.slug
 
     def increase_views(self):
         self.views += 1
@@ -88,9 +88,9 @@ class Friend(models.Model):
         return self.name
 
 
-class Site(models.Model):
+class Social(models.Model):
     """
-    展示网站
+    社交网站
     """
     name = models.CharField(u'名称', max_length=10, unique=True)
     url = models.CharField(u'地址', max_length=50, unique=True)
@@ -99,8 +99,8 @@ class Site(models.Model):
 
     class Meta:
         ordering = ['position']
-        verbose_name = u'展示网站'
-        verbose_name_plural = u'展示网站'
+        verbose_name = u'社交网站'
+        verbose_name_plural = u'社交网站'
 
     def __str__(self):
         return self.name

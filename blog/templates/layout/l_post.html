@@ -34,7 +34,9 @@
             <div class="post-footer">
                 <div class="review-item-tag"><img src="/statics/images/svg/tag.svg">
                     {% for tag in  post.tags.all %}
-                        <a class="tag">{{tag.name}}</a>
+                        <a href="tag/{{tag.name}}" class="tag">{{tag.name}}</a>
+                    {% empty %}
+                        <a class="tag">未设置标签</a>
                     {% endfor %}
                 </div>
                 <a class="gaz-btn primary pull-right" href="{{ post.get_absolute_url }}">READ MORE</a>

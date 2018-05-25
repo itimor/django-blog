@@ -20,10 +20,13 @@
                             {% regroup year.list by publish_time.month as posts_by_month %}
                                 {% for month in posts_by_month %}
                                     <h3>{{ month.grouper }}月 ({{month.list | length}})</h3>
-                                    {% for d in month.list %}
+                                    {% for post in month.list %}
                                         <div class='archives'>
                                             <div class="brick">
-                                                <a href=""><span class="time">{{ d.publish_time |date:'m-d h:m' }}</span> {{ d.name }}</a>
+                                                <a href="{{ post.get_absolute_url }}">
+                                                    <span class="time">{{ post.publish_time |date:'m-d h:m' }}</span>
+                                                    {{ post.name }}
+                                                </a>
                                             </div>
                                         </div>
                                     {% endfor %}
