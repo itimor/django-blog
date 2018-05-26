@@ -16,6 +16,7 @@
                         {{ post.content }}
                     {% endautoescape %}
                 </div>
+                <hr/>
                 <div class="meta split split--responsive cf">
                     <div class="split__title">
                         <time>{{ post.publish_time|date:'Y-m-d' }} |</time>
@@ -49,7 +50,6 @@
                 {% endif %}
             </div>
         </div>
-        <hr/>
         <div class="next" data-aos="slide-left" data-aos-delay="1.5s">
             <div class="arrow"><img src="/statics/images/svg/right.svg"></div>
             <div class="preview">

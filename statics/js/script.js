@@ -64,7 +64,7 @@ document.body.addEventListener('touchstart', function () {
                 text: "<img src='/statics/images/svg/recket.svg' width='40' height='40'>",
                 buttonPos: {
                     right: 20,
-                    bottom: 20
+                    bottom: 60
                 }
             });
         });

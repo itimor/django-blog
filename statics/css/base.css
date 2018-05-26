@@ -484,7 +484,7 @@ a:hover {
 hr {
     max-width: 100%;
     height: 50px;
-    background: url(../images/hr.gif) right center no-repeat;
+    background: url(/statics/images/hr.gif) right center no-repeat;
     border: none;
     margin-top: 15px;
     margin-bottom: 15px;

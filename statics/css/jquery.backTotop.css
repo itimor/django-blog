@@ -7,8 +7,8 @@
 }
 
 .back-to-top:hover {
-    content: "快放我上去";
-    animation: rocket-q 1.5s ease-in-out alternate infinite;
+    content: "快上车，没时间解释了";
+    animation: rocket-w 1.5s ease-in-out alternate infinite;
 }
 
 @-webkit-keyframes rocket-w {
@@ -23,20 +23,5 @@
     }
     100% {
         transform: translateY(0);
-    }
-}
-
-@-webkit-keyframes rocket-q {
-    5% {
-        transform: translateY(-10px);
-    }
-    35% {
-        transform: translateY(-20px);
-    }
-    65% {
-        transform: translateY(-30px);
-    }
-    100% {
-        transform: translateY(-40);
     }
 }
