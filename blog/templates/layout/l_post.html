@@ -5,7 +5,7 @@
                 <div class="col-sm-3">
                     <a rel="nofollow" href="{{ post.get_absolute_url }}">
                         {% if post.cover %}
-                            <div class="review-item-img" style="background-image: url(upload/{{ post.cover }});"></div>
+                            <div class="review-item-img" style="background-image: url(/upload/{{ post.cover }});"></div>
                         {% else %}
                             <div class="review-item-img" style="background-image: url(/statics/images/tmp/l.jpg);"></div>
                         {% endif %}
@@ -21,9 +21,9 @@
             </div>
             <div class="review-bg-wrapper">
                 {% if post.cover %}
-                    <div class="bg-blur" style="background-image: url(upload/{{ post.cover }});"></div>
+                    <div class="bg-blur" style="background-image: url(/upload/{{ post.cover }});"></div>
                 {% else %}
-                    <div class="bg-blur" style="background-image: url(/statics/images/tmp/l.jpg);"></div>
+                    <div class="bg-blur" style="background-image: url(/statics/images/l_post.jpg);"></div>
                 {% endif %}
             </div>
         </div>

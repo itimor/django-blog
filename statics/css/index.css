@@ -840,6 +840,10 @@ input[type="search"]::-webkit-search-decoration {
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1)
 }
 
+.review-item-title a{
+    color: #4c4c4c;
+}
+
 .review-item-creator {
     font-size: 1em;
     font-weight: normal;
@@ -1156,7 +1160,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .post-body ul li:before {
-    color: #efefef;
+    color: #dd1ea8;
     font-size: 0.6875rem;
     content: "\e60d";
 }

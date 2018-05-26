@@ -19,7 +19,7 @@ class IndexView(ListView):
     queryset = Article.objects.filter(published=True)
 
     # 分页limit
-    paginate_by = 2
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
