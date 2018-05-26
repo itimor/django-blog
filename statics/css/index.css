@@ -1226,6 +1226,17 @@ input[type="search"]::-webkit-search-decoration {
     cursor: pointer
 }
 
+.search_post {
+    margin: 10px;
+}
+
+.search_title {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px;
+}
+
 .format-lede .post-body > :first-child {
     font-weight: bold;
     color: #444

@@ -1,0 +1,33 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+| 搜索
+{% endblock %}
+
+{% block content %}
+<div id="main" class="content">
+    <div class="container">
+        <section class="post_content">
+            <header class="post_header">
+                <h1 class="post_title">搜索 <span>"{{request.GET.search}}"</span></h1>
+            </header>
+            <div class="posts-list js-posts">
+                {% for post in search_posts %}
+                    {% include './layout/s_post.html' %}
+                {% empty %}
+                    <div class="no-post">你走吧！没有你想要的东西</div>
+                {% endfor %}
+            </div>
+            <!-- post-formats end Infinite Scroll star -->
+            <!-- post-formats -->
+            {% block pagination %}
+                {% if is_paginated %}
+                    {% include './layout/pagination.html' %}
+                {% endif %}
+            {% endblock %}
+            <!-- -pagination  -->
+            </article>
+        </section>
+    </div>
+</div>
+{% endblock %}

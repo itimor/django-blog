@@ -1,0 +1,12 @@
+<div class="post post-layout-list" data-aos="fade-up">
+    <div class="postnormal review">
+        <div class="search_post">
+            <a href="{{ post.get_absolute_url }}" class="search_title">{{ post.name }}</a>
+            <div class="entry-content">
+                {% autoescape off %}
+                    {{ post.excerpt }}
+                {% endautoescape %}
+            </div>
+        </div>
+    </div>
+</div>

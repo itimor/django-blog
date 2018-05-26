@@ -1,15 +1,14 @@
 <header id="masthead" class="overlay animated from-bottom" itemprop="brand">
-    <form class="js-search search-form search-form--modal" method="get" action="search.html" role="search">
+    <form class="js-search search-form search-form--modal" method="get" action="{% url 'blog:search' %}" role="search">
         <div class="search-form__inner">
             <div>
                 <div id="search-container" class="ajax_search">
-                    <form method="get" id="searchform" action="">
-                        <div class="filter_container"><input type="text" value="" autocomplete="off"
-                                                             placeholder="Type then select or enter" name="s"
-                                                             id="search-input"/>
+                    <form method="get" id="searchform" action="{% url 'blog:search' %}">
+                        <div class="filter_container">
+                            <input type="text" value="" autocomplete="off" placeholder="search ..." name="search"/>
                             <ul id="search_filtered" class="search_filtered"></ul>
                         </div>
-                        <input type="submit" name="submit" id="searchsubmit" class="searchsubmit" value=""/>
+                        <input type="submit" id="searchsubmit" class="searchsubmit" value=""/>
                     </form>
                 </div>
             </div>

@@ -8,6 +8,9 @@ from django.views.generic.list import ListView
 from blog.models import Article, Tag, Friend
 from utils.pagination import get_pagination
 import markdown
+import operator
+from django.db.models import Q
+from functools import reduce
 
 
 class IndexView(ListView):
@@ -154,3 +157,29 @@ class GustView(ListView):
     def get_context_data(self, **kwargs):
         context = super(GustView, self).get_context_data(**kwargs)
         return context
+
+
+class SearchView(ListView):
+    """
+    首页
+    """
+    template_name = 'search.html'
+    context_object_name = "search_posts"
+    queryset = Article.objects.filter(published=True)
+    paginate_by = 10
+
+    def get_queryset(self):
+        context = super(SearchView, self).get_queryset()
+
+        q = self.request.GET.get('search', '')
+        if q:
+            query_list = q.split()
+            result = context.filter(
+                reduce(operator.and_,
+                       (Q(name__icontains=q) for q in query_list)) |
+                reduce(operator.and_,
+                       (Q(content__icontains=q) for q in query_list))
+            )
+
+        return result
+
