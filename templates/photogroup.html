@@ -16,7 +16,7 @@
                     {% for photogroup in photogroups %}
                     <li>
                         <a href="/photo/photo/{{ photogroup.name }}/" class="b-link-stripe b-animate-go thickbox">
-                            <img src="/upload/{{ photogroup.cover }}" alt=""/>
+                            <img src="/upload/{{ photogroup.cover }}" width="250" height="250" alt=""/>
                             <div>
                                 <h5>{{ photogroup.name }}</h5>
                                 <span>{{ photogroup.desc }}</span>
@@ -24,24 +24,10 @@
                         </a>
                     </li>
                     {% empty %}
-                    <li>
-                        <a class="b-link-stripe b-animate-go thickbox">
-                            <img src="/statics/images/empty.png" alt=""/>
-                            <div>
-                                <h5>你还没有建立相册</h5>
-                                <span>没有了，啥图片都没有</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="b-link-stripe b-animate-go thickbox">
-                            <img src="/statics/images/empty.png" alt=""/>
-                            <div>
-                                <h5>你还没有建立相册</h5>
-                                <span>没有了，啥图片都没有</span>
-                            </div>
-                        </a>
-                    </li>
+                        <div>
+                            <h5>你还没有建立相册</h5>
+                            <span>没有了，啥图片都没有</span>
+                        </div>
                     {% endfor %}
                 </ul>
             </div>

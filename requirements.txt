@@ -1,7 +1,7 @@
 Django==2.0.5
 django-uuslug==1.1.8
 Markdown==2.6.11
-Pillow==5.1.0
+pillow==5.0.0python
 python-slugify==1.2.5
 pytz==2018.4
 six==1.11.0

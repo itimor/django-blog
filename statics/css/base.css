@@ -512,11 +512,6 @@ dd {
     margin: 0 1.5em 1.5em
 }
 
-img {
-    height: auto;
-    max-width: 100%
-}
-
 figure {
     margin: 0
 }
@@ -551,9 +546,9 @@ ul {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    transition: opacity .2s
+    height: 100vm;
+    width: 100vm;
+    transition: opacity .2s;
 }
 
 label {
