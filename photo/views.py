@@ -30,5 +30,4 @@ class PhotoView(ListView):
     def get_queryset(self):
         group = self.kwargs.get('group')
         context = super(PhotoView, self).get_queryset().filter(group__name=group)
-        print(context)
         return context

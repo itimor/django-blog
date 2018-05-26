@@ -17,9 +17,11 @@ class PhotoGroup(models.Model):
         verbose_name = u'相册'
         verbose_name_plural = u'相册'
 
+    def __str__(self):
+        return self.name
+
 
 class Photo(models.Model):
-    name = models.CharField(max_length=100, unique=True, verbose_name=u'标题')
     photo = models.ImageField(upload_to=PathAndRename("photo"), verbose_name=u'照片')
     desc = models.TextField(null=True, blank=True, verbose_name=u'描述')
     group = models.ForeignKey('PhotoGroup', on_delete=models.CASCADE, blank=True)

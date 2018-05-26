@@ -12,9 +12,9 @@ class PhotoGroupAdmin(admin.ModelAdmin):
 
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'desc', 'group', 'create_time', 'update_time')
+    list_display = ('group', 'desc', 'create_time', 'update_time')
     list_filter = ('group', 'create_time', 'update_time')
-    fields = ('name', 'photo', 'desc', 'group')
+    fields = ('group', 'photo', 'desc')
 
 
 admin.site.register(PhotoGroup, PhotoGroupAdmin)

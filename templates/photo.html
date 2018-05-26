@@ -8,42 +8,21 @@
 <div id="main" class="content">
     <div class="container">
         <section class="post_content">
-            <header class="post_header">
-                <h1 class="post_title">相册</h1>
-            </header>
             <div class="photoItems">
-                <ul id="da-thumbs" class="da-thumbs">
-                    {% for photogroup in photogroups %}
-                    <li>
-                        <a class="b-link-stripe b-animate-go thickbox">
-                            <img src="/upload/{{ photogroup.cover }}" alt=""/>
-                            <div>
-                                <h5>{{ photogroup.name }}</h5>
-                                <span>{{ photogroup.desc }}</span>
-                            </div>
-                        </a>
-                    </li>
-                    {% empty %}
-                    <li>
-                        <a class="b-link-stripe b-animate-go thickbox">
-                            <img src="/statics/images/empty.png" alt=""/>
-                            <div>
-                                <h5>你还没有建立相册</h5>
-                                <span>没有了，啥图片都没有</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="b-link-stripe b-animate-go thickbox">
-                            <img src="/statics/images/empty.png" alt=""/>
-                            <div>
-                                <h5>你还没有建立相册</h5>
-                                <span>没有了，啥图片都没有</span>
-                            </div>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
+                		<div class="photo-content">
+			<div id="xxoo" class="chroma-gallery">
+				<img src="/statics/images/thumbs/1.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/2.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/3.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/4.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/5.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/6.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/7.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/8.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/9.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/10.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+			</div>
+		</div>
             </div>
         </section>
     </div>

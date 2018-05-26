@@ -83,6 +83,17 @@ document.body.addEventListener('touchstart', function () {
             $(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
         });
 
+        // 相片瀑布流
+        $(function() {
+            $("#xxoo").chromaGallery({
+		        color:'#000',
+		        gridMargin:15,
+		        maxColumns:5,
+		        dof:true,
+		        screenOpacity:0.8
+		    });
+        });
+
         // menu active
         $(function () {
             $("#primary-menu").find("li").each(function () {
