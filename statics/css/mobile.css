@@ -534,3 +534,9 @@
         width: 50%
     }
 }
+
+@media (max-width: 480px) {
+    .da-thumbs li {
+        width: 49.2%;
+    }
+}

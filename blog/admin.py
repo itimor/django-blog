@@ -8,15 +8,7 @@ from blog.models import Article, Tag, Friend, Social
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'type', 'published', 'create_time', 'publish_time', 'views')
     list_filter = ('published', 'publish_time', 'views')
-    fields = (
-        'name',
-        'cover',
-        'content',
-        'excerpt',
-        'type',
-        'published',
-        'tags',
-    )
+    fields = ('name', 'cover', 'content', 'excerpt', 'type', 'published', 'tags',)
     readonly_fields = ('excerpt',)
     exclude = ('publish_time',)
     search_fields = ('name', 'published')

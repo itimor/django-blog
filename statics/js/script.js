@@ -78,6 +78,11 @@ document.body.addEventListener('touchstart', function () {
             $(this).wrapAll(strA);
         });
 
+        // 相册
+        $(function() {
+            $(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+        });
+
         // menu active
         $(function () {
             $("#primary-menu").find("li").each(function () {

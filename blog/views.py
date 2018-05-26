@@ -120,19 +120,6 @@ class TagView(ListView):
         return {'tags': tags, 'tag': tag, 'posts': context}
 
 
-class PhotoView(ListView):
-    """
-    首页
-    """
-    template_name = 'photo.html'
-    context_object_name = "photos"
-    queryset = Article.objects.filter(published=True)
-
-    def get_context_data(self, **kwargs):
-        context = super(PhotoView, self).get_context_data(**kwargs)
-        return context
-
-
 class LinkView(ListView):
     """
     首页

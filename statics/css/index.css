@@ -840,7 +840,7 @@ input[type="search"]::-webkit-search-decoration {
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1)
 }
 
-.review-item-title a{
+.review-item-title a {
     color: #4c4c4c;
 }
 
@@ -2671,7 +2671,7 @@ section.right .bub {
     margin-bottom: 20px
 }
 
-.userItems {
+.userItems, .photoItems {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2845,7 +2845,7 @@ section.right .bub {
 
 #error,
 .navbar ul li.current-menu-ancestor > a,
-li.active > a{
+li.active > a {
     color: #33c5c5;
 }
 
@@ -2965,7 +2965,7 @@ li.active > a{
 .tags a {
     display: inline-block;
     margin: 12px;
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .tag a {

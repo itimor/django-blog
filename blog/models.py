@@ -7,7 +7,6 @@ from django.db import models
 from uuslug import slugify
 from blog.storage import PathAndRename
 from django.urls import reverse
-from django.utils.html import strip_tags
 
 BlogTypes = (
     ('l', '星辰大海'),
