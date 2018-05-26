@@ -58,6 +58,17 @@ document.body.addEventListener('touchstart', function () {
          delay: 100,
          } */);
 
+        $(function() {
+            $("body").backTotop({
+                isWindow: true,
+                text: "<img src='/statics/images/svg/recket.svg' width='40' height='40'>",
+                buttonPos: {
+                    right: 20,
+                    bottom: 20
+                }
+            });
+        });
+
         // menu active
         $(function () {
             $("#primary-menu").find("li").each(function () {
