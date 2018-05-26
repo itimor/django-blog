@@ -69,6 +69,15 @@ document.body.addEventListener('touchstart', function () {
             });
         });
 
+        // markdown click img
+        var n = 1;
+        $("p img").each(function() {
+            // 让图片不以图集存在
+            n++;
+            var strA = "<a href='" + this.src + "' data-lightbox='xxoo-" + n + "' data-title='" + this.alt + "'></a>";
+            $(this).wrapAll(strA);
+        });
+
         // menu active
         $(function () {
             $("#primary-menu").find("li").each(function () {
@@ -254,12 +263,6 @@ document.body.addEventListener('touchstart', function () {
                 $(this).toggleClass('animation-on');
             }, {offset: 'bottom-in-view'});
         }
-
-        // lazyload
-        $(function () {
-            $('.comment .profile img').lazyload({threshold: 100, effect: "fadeIn"});
-        });
-
         //end
     });
 

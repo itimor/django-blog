@@ -1178,9 +1178,8 @@ input[type="search"]::-webkit-search-decoration {
     color: #888;
     clear: both;
     position: relative;
-    padding: .5em 0;
+    padding: .5em 2em;
     margin: 1.62em 0;
-    text-align: center
 }
 
 .post-body blockquote:after,
@@ -1190,7 +1189,6 @@ input[type="search"]::-webkit-search-decoration {
     position: absolute;
     width: 38%;
     height: 100%;
-    left: 31%;
     top: 0;
     pointer-events: none;
     border-top: 1px solid #ea34ef;
@@ -1199,7 +1197,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .post-body blockquote:after {
     width: 2%;
-    left: 49%;
+    left: 23%;
     border-top: .2em solid #ea34ef;
     border-bottom: .2em solid #ea34ef
 }
