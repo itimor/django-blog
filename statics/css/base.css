@@ -351,6 +351,7 @@ html body {
 html {
     width: 100%;
     height: 100%;
+    text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -366,7 +367,8 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -moz-font-feature-settings: "liga" on
+    font-feature-settings: "liga" on;
+    -moz-font-feature-settings: "liga" on;
 }
 
 body,
