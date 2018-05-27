@@ -555,3 +555,10 @@ img {
 label {
     font-weight: normal
 }
+
+pre {
+    display: block;
+    border-radius: 0.5em;
+    background: #000;
+    overflow-x: auto;
+}
