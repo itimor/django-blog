@@ -11,20 +11,56 @@
             <div class="photoItems">
                 		<div class="photo-content">
 			<div id="xxoo" class="chroma-gallery">
-				<img src="/statics/images/thumbs/1.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/2.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/3.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/4.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/5.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/6.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/7.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/8.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/9.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
-				<img src="/statics/images/thumbs/10.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/1.jpg" alt="大街" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/2.jpg" alt="长河" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/3.jpg" alt="小玩意" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/4.jpg" alt="猫头鹰" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/5.jpg" alt="高楼" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/6.jpg" alt="老街" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/7.jpg" alt="狗王" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/8.jpg" alt="现代化大厦" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/9.jpg" alt="豹子" data-largesrc="images/1.jpg">
+				<img src="/statics/images/thumbs/10.jpg" alt="日光瀑布" data-largesrc="images/1.jpg">
 			</div>
 		</div>
             </div>
         </section>
-    </div>
+	</div>
+	
+	<div class="navpost-part">
+		<div id="NextPrevPosts">
+			<div class="prev" data-aos="slide-right" data-aos-delay="1.5s">
+				<div class="arrow"><img src="/statics/images/svg/left.svg"></div>
+				<div class="preview">
+					{% if prev_post %}
+						{% if prev_post.cover %}
+							<div class="pull-left featuredImg" style="background-image:url(/upload/{{ prev_post.cover }});"></div>
+						{% else %}
+							<div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
+						{% endif %}
+						<a class="pull-left preview-content bold" href="{{ prev_post.get_absolute_url }}"><span>{{ prev_post.name }}</span></a>
+					{% else %}
+						<div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
+						<a class="pull-left preview-content bold" href="#"><span>海底月是天上月</span></a>
+					{% endif %}
+				</div>
+			</div>
+			<div class="next" data-aos="slide-left" data-aos-delay="1.5s">
+				<div class="arrow"><img src="/statics/images/svg/right.svg"></div>
+				<div class="preview">
+					{% if next_post %}
+						{% if next_post.cover %}
+							<div class="pull-right featuredImg" style="background-image:url(/upload/{{ next_post.cover }});"></div>
+						{% else %}
+							<div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
+						{% endif %}
+						<a class="pull-right preview-content bold" href="{{ next_post.get_absolute_url }}"><span>{{ next_post.name }}</span></a>
+					{% else %}
+						 <div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
+						<a class="pull-right preview-content bold" href="#"><span>我也是有底线的</span></a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
 </div>
 {% endblock %}

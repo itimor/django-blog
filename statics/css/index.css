@@ -863,6 +863,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .review-item-tag > img {
+    width: 24px;
     vertical-align: middle;
 }
 
