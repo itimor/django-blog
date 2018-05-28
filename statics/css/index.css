@@ -2772,7 +2772,7 @@ section.right .bub {
     position: relative;
     display: block;
     padding: 10px 0;
-    border-bottom: 1px dashed #eee;
+    border-bottom: 1px dashed #b8e2da;
     color: #333;
     font-style: normal
 }
@@ -2798,7 +2798,7 @@ section.right .bub {
     height: 20px;
     border: 5px solid #fff;
     border-radius: 50%;
-    background: #EEE;
+    background: #efb6ec;
     position: absolute;
     left: -50px;
 }
