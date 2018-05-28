@@ -12,7 +12,7 @@
             <div class="posts-list js-posts">
                 {% if user.is_authenticated %}
                 <div class="post add-post">
-                    <a href="/post/add">
+                    <a href="{% url 'blog:add' %}">
                         <img src="/statics/images/svg/edit.svg" width="20" height="20">
                         来一篇新的文章
                     </a>

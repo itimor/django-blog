@@ -15,7 +15,7 @@
                     <div class="review-item-title">
                         <a href="{{ post.get_absolute_url }}">{{ post.name }}</a>
                         {% if user.is_authenticated %}
-                            <a href="{{ post.get_absolute_url }}/edit"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>
+                            <a href="/post/edit/{{ post.name }}"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>
                         {% endif %}
                     </div>
                     <div class="review-item-creator"><b>发布日期：</b>{{ post.publish_time|date:'Y-m-d h:m' }}</div>
