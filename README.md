@@ -1,4 +1,4 @@
-# django-blog
+# django-blog, 支持pc和手机端的响应式blog
 
 
 ## pc效果图
