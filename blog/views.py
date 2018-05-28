@@ -4,6 +4,7 @@
 from django.core.exceptions import PermissionDenied
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from django.views.generic.edit import FormView
 
 from blog.models import Article, Tag, Friend
 from utils.pagination import get_pagination
@@ -11,6 +12,29 @@ import markdown
 import operator
 from django.db.models import Q
 from functools import reduce
+from blog.forms import ArticleAddForm
+from django.shortcuts import render
+
+
+# 自定义错误页面
+def bad_request(request):
+    data = {"code": 400, "msg": "发生了一个未知的错误"}
+    return render(request, 'error.html', data)
+
+
+def permission_denied(request):
+    data = {"code": 403, "msg": "这不是你该来的地方"}
+    return render(request, 'error.html', data)
+
+
+def page_not_found(request):
+    data = {"code": 404, "msg": "你进了一个未知的地方"}
+    return render(request, 'error.html', data)
+
+
+def server_error(request):
+    data = {"code": 500, "msg": "代码出bug了"}
+    return render(request, 'error.html', data)
 
 
 class IndexView(ListView):
@@ -170,3 +194,12 @@ class SearchView(ListView):
 
         return result
 
+
+class ArticleAddView(FormView):
+    template_name = 'article_add.html'
+    form_class = ArticleAddForm
+    success_url = '/'
+
+    def form_valid(self, form):
+        form.save()
+        return super(ArticleAddView, self).form_valid(form)

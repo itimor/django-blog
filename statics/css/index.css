@@ -535,16 +535,17 @@ input[type="search"]::-webkit-search-decoration {
     max-width: 800px;
 }
 
-.footer-info div{
+.footer-info div {
     display: inline-block;
     text-align: center;
 }
 
-.footer-info div a{
+.footer-info div a {
     color: black;
     display: block;
     margin: 10px auto;
 }
+
 .socialize li {
     display: inline-block;
 }
@@ -656,6 +657,17 @@ input[type="search"]::-webkit-search-decoration {
 .posts-wrap {
     width: 100%;
     display: inline-block
+}
+
+.add-post{
+    padding: 5px 20px!important;
+    border: solid 2px #afd8c7;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.add-post a {
+    display: block;
 }
 
 .neirong {
@@ -2355,7 +2367,7 @@ li.active > a {
 }
 
 .posts-list a:hover,
-.socialize a:hover{
+.socialize a:hover {
     color: #7fb52b;
 }
 
@@ -2476,4 +2488,32 @@ li.active > a {
     border-bottom: 1px solid #eee;
     color: #333;
     font-style: normal
+}
+
+.login {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.login form {
+    padding: 10px !important;
+}
+
+.login input {
+    border-radius: 5px;
+    line-height: 35px !important;
+    border: solid 1px #d1d1d1;
+}
+
+.login button {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 5px 0 0;
+    font-size: 14px;
 }

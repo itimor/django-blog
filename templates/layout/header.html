@@ -53,12 +53,22 @@
         <a class=" js-toggle-search"><img src="/statics/images/svg/search.svg"></a>
     </div>
     <div class="site-branding text-center">
-        <a href="/login">
-            <figure>
-                <img class="custom-logo avatar" src="/statics/images/favicon.png"/>
-            </figure>
-        </a>
-        <p>This is my world</p>
+        {% if user.is_authenticated %}
+            <a href="/logout">
+                <figure>
+                    <img class="custom-logo avatar" src="/statics/images/favicon.png"/>
+                </figure>
+            </a>
+            <p style="color: #000;">This is my world</p>
+        {% else %}
+            <a href="/login">
+                <figure>
+                    <img class="custom-logo avatar" src="/statics/images/favicon.png"/>
+                </figure>
+            </a>
+            <p>This is my world</p>
+        {% endif %}
+
     </div>
     <!-- .site-branding -->
 

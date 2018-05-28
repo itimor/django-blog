@@ -9,7 +9,11 @@
     <div class="container">
         <section class="post_content">
             <header class="post_header">
-                <h1 class="post_title">{{ post.name }}</h1>
+                <h1 class="post_title">{{ post.name }}
+                    {% if user.is_authenticated %}
+                        <a href="{{ post.get_absolute_url }}/edit"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>
+                    {% endif %}
+                </h1>
             </header>
             <div class="post-body">
                 {% autoescape off %}

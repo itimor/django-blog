@@ -10,6 +10,15 @@
     <div class="container">
         <article itemscope="itemscope">
             <div class="posts-list js-posts">
+                {% if user.is_authenticated %}
+                <div class="post add-post">
+                    <a href="/post/add">
+                        <img src="/statics/images/svg/edit.svg" width="20" height="20">
+                        来一篇新的文章
+                    </a>
+                </div>
+                {% endif %}
+
                 {% for post in posts %}
                     {% if post.type == 'l' %}
                         {% include './layout/l_post.html' %}
