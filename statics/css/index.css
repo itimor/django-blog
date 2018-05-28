@@ -2517,3 +2517,8 @@ li.active > a {
     margin: 10px 5px 0 0;
     font-size: 14px;
 }
+
+.publish {
+    background: #ffffff;
+    border-radius: 10px;
+}

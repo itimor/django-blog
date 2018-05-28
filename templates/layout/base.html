@@ -21,6 +21,9 @@
 
     <link href="/statics/css/mobile.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
+
+{% block extra_head %}
+{% endblock %}
 <body>
 <div id="particles-js"></div>
 {% block header %}
@@ -30,6 +33,8 @@
 {% block content %}
 {% endblock %}
 
+{% block scripts %}
+{% endblock %}
 <div class="clearfloat"></div>
 {% block footer %}
     {% include './footer.html' %}
