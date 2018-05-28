@@ -1,6 +1,5 @@
 # django-blog
 
-## 一个响应式blog
 
 ## pc效果图
 
