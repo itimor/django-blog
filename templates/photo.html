@@ -38,7 +38,7 @@
 						{% else %}
 							<div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
 						{% endif %}
-						<a class="pull-left preview-content bold" href="{{ prev_post.get_absolute_url }}"><span>{{ prev_post.name }}</span></a>
+						<a class="pull-left preview-content bold" href="/photo/photo/{{ prev_post.name }}/"><span>{{ prev_post.name }}</span></a>
 					{% else %}
 						<div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
 						<a class="pull-left preview-content bold" href="#"><span>海底月是天上月</span></a>
@@ -54,7 +54,7 @@
 						{% else %}
 							<div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
 						{% endif %}
-						<a class="pull-right preview-content bold" href="{{ next_post.get_absolute_url }}"><span>{{ next_post.name }}</span></a>
+						<a class="pull-right preview-content bold" href="/photo/photo/{{ next_post.name }}/"><span>{{ next_post.name }}</span></a>
 					{% else %}
 						 <div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
 						<a class="pull-right preview-content bold" href="#"><span>我也是有底线的</span></a>

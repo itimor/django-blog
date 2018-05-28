@@ -485,13 +485,12 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 #main {
-    background: #fff;
+    background: #f5f5f5;
     position: relative;
 }
 
 .container {
     position: relative;
-    background: #fff;
     padding: 60px 0 20px;
     margin: 50px 10px;
 }
@@ -1537,20 +1536,17 @@ h2.archive-title span:after {
 
 .pagination li {
     display: inline-block;
-}
-
-.pagination li a {
     color: black;
-    padding: 5px;
-}
-
-.pagination li.active {
     min-width: 30px;
     height: 30px;
     line-height: 30px;
     text-align: center;
     font-size: 15px;
     border-radius: 50%;
+    background: rgb(255, 255, 255);
+}
+
+.pagination li.active {
     background: rgba(0, 0, 1, 0.15);
 }
 
@@ -2703,7 +2699,8 @@ section.right .bub {
     border-radius: 3px;
     position: relative;
     padding-bottom: 100%;
-    height: 0
+    height: 0;
+    background: #fff;
 }
 
 .userItem-content {
@@ -2722,7 +2719,6 @@ section.right .bub {
     -ms-flex-align: center;
     align-items: center;
     -webkit-flex-flow: column wrap;
-    -ms-flex-flow: column wrap;
     flex-flow: column wrap;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
