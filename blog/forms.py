@@ -12,7 +12,6 @@ class ArticleAddForm(forms.Form):
 
     def save(self):
         cd = self.cleaned_data
-        print(cd)
         name = cd['name']
         content = cd['content']
         tags = cd['tags']
