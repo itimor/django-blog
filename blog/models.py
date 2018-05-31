@@ -7,6 +7,7 @@ from django.db import models
 from uuslug import slugify
 from blog.storage import PathAndRename
 from django.urls import reverse
+from mdeditor.fields import MDTextField
 
 BlogTypes = (
     ('l', '星辰大海'),
@@ -20,7 +21,7 @@ class Article(models.Model):
     slug = models.SlugField(u'链接', default='#', null=True, blank=True)
     cover = models.ImageField(upload_to=PathAndRename("cover"), blank=True, verbose_name=u'封面')
     type = models.CharField(max_length=1, choices=BlogTypes, default='l', verbose_name=u'类型')
-    content = models.TextField(u'内容', )
+    content = MDTextField(u'内容', )
     excerpt = models.TextField(u'摘要', )
     create_time = models.DateTimeField(u'创建时间', auto_now_add=True)
     update_time = models.DateTimeField(u'修改时间')

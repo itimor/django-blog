@@ -2,7 +2,9 @@
 # author: itimor
 
 from django.contrib import admin
+from django.db import models
 from blog.models import Article, Tag, Friend, Social
+from mdeditor.widgets import MDEditorWidget
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -14,6 +16,9 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = ('name', 'published')
     ordering = ('-create_time', 'published', 'publish_time')
     list_per_page = 20
+    formfield_overrides = {
+        models.TextField: {'widget': MDEditorWidget}
+    }
 
 
 class TagAdmin(admin.ModelAdmin):
