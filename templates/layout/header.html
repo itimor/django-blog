@@ -53,7 +53,7 @@
         <a class=" js-toggle-search"><img src="/statics/images/svg/search.svg"></a>
     </div>
     <div class="site-branding text-center">
-        {% if user.is_authenticated %}
+        {% if user.is_staff %}
             <a href="/logout">
                 <figure>
                     <img class="custom-logo avatar" src="/statics/images/favicon.png"/>

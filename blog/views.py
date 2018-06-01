@@ -14,6 +14,9 @@ from django.db.models import Q
 from functools import reduce
 from blog.forms import ArticleAddForm
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.views import login_required
 
 
 # 自定义错误页面
@@ -195,11 +198,28 @@ class SearchView(ListView):
         return result
 
 
-class ArticleAddView(FormView):
+# 登录用户验证
+class LoginRequiredMixin(object):
+    @classmethod
+    def as_view(cls, **initkwargs):
+        view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
+        return login_required(view)
+
+
+# 管理员用户验证
+class AdminRequiredMixin(object):
+    @classmethod
+    def as_view(cls, **initkwargs):
+        view = super(AdminRequiredMixin, cls).as_view(**initkwargs)
+        return staff_member_required(view)
+
+
+class ArticleAddView(LoginRequiredMixin, FormView):
     template_name = 'article_add.html'
     form_class = ArticleAddForm
-    success_url = '/'
+    success_url = '/photo'
 
+    @csrf_exempt
     def form_valid(self, form):
         form.save()
         return super(ArticleAddView, self).form_valid(form)

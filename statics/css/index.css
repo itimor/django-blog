@@ -2512,3 +2512,8 @@ li.active > a {
     font-size: 16px;
     height: 30px;
 }
+
+.form-error p{
+    text-align: center;
+    color: red;
+}

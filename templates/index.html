@@ -10,7 +10,7 @@
     <div class="container">
         <article itemscope="itemscope">
             <div class="posts-list js-posts">
-                {% if user.is_authenticated %}
+                {% if user.is_staff  %}
                 <div class="post add-post">
                     <a href="{% url 'blog:add' %}">
                         <img src="/statics/images/svg/edit.svg" width="20" height="20">
