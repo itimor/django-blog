@@ -4,24 +4,18 @@
 | 新建文章
 {% endblock %}
 
-{% comment %} {% block extra_head %}
-<link rel="stylesheet" href="//cdn.jsdelivr.net/editor/0.1.0/editor.css">
-<script src="//cdn.jsdelivr.net/editor/0.1.0/editor.js"></script>
-<script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
-{% endblock %} {% endcomment %}
-
 {% block content %}
 <div id="main" class="content">
     <div class="container">
-        <section class="post_content">
+        <section class="post_content post_add">
             <header class="post_header">
                 <h1 class="post_title">新建文章</h1>
             </header>
             <div class="publish center-block">
                 <form action="" method="post">
                     {% csrf_token %}
-                    {{form.media}}
-                    {{form.as_p}}
+                    {{ form.media }}
+                    {{ form.as_p }}
                     <button type="submit" class="btn btn-primary">发 布</button>
                 </form>
             </div>

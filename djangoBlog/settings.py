@@ -106,3 +106,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+MDEDITOR_CONFIGS = {
+    'default': {
+        'upload_image_formats': ["jpg", "jpeg", "gif", "png", "bmp", "webp"],  # image upload format type
+        'image_floder': 'cover',
+        'toolbar': ["image", "code-block", "table", "datetime",
+                    "||", "preview", "watch", "fullscreen"],  # custom edit box toolbar
+        'preview_theme': 'default',  # Preview area theme, dark / default
+        'editor_theme': 'default',  # edit area theme, pastel-on-dark / default
+        'flow_chart': True,
+    },
+}
