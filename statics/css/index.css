@@ -886,11 +886,6 @@ input[type="search"]::-webkit-search-decoration {
     display: inline-block;
 }
 
-.review-item-tag > img {
-    width: 24px;
-    vertical-align: middle;
-}
-
 .review-item-tag > a {
     font-size: 13px;
     padding: 2px;
@@ -985,10 +980,6 @@ input[type="search"]::-webkit-search-decoration {
     -ms-flex-item-align: center;
     align-self: center;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.col-xs-4 img {
-    vertical-align: middle
 }
 
 .album-thumb [class*='col-'] {

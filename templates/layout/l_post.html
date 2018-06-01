@@ -13,7 +13,11 @@
                 </div>
                 <div class="col-sm-9 flex-xs-middle">
                     <div class="review-item-title">
-                        <a href="{{ post.get_absolute_url }}">{{ post.name }}</a>
+                        <a href="{{ post.get_absolute_url }}">{{ post.name }}
+                            {% if post.is_top %}
+                                <img src="/statics/images/svg/top.svg">
+                            {% endif %}
+                        </a>
                         {% if user.is_authenticated %}
                             <a href="/post/edit/{{ post.name }}"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>
                         {% endif %}

@@ -26,6 +26,7 @@ class Article(models.Model):
     create_time = models.DateTimeField(u'创建时间', auto_now_add=True)
     update_time = models.DateTimeField(u'修改时间')
     published = models.BooleanField(u'发布', default=True)
+    is_top = models.BooleanField(u'置顶', default=False)
     publish_time = models.DateTimeField(u'发布时间', null=True)
     views = models.PositiveIntegerField(u'浏览量', default=0)
     tags = models.ManyToManyField('Tag', related_name='tags', null=True, blank=True, verbose_name=u'标签')
@@ -33,7 +34,7 @@ class Article(models.Model):
     class Meta:
         verbose_name = u'文章'
         verbose_name_plural = u'文章'
-        ordering = ['-update_time']
+        ordering = ['-is_top', '-update_time']
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)

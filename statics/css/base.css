@@ -600,6 +600,7 @@ img {
     height: auto;
     max-width: 100%;
     transition: opacity .2s;
+    vertical-align: middle;
 }
 
 label {
