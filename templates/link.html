@@ -16,50 +16,25 @@
                 <div class="catalog-description"></div>
                 <div class="catalog-share">4 items in collection</div>
                 <div class="userItems">
+                    {% for post in posts %}
                     <div class="userItem">
                         <div class="userItem--inner">
                             <div class="userItem-content">
-                                <img alt='' src='/statics/images/tmp/004.jpeg'
-                                                               class='avatar avatar-64 photo' height='64' width='64'/>
+                                <img alt='' src="/upload/{{post.cover}}" height='64' width='64'/>
                                 <div class="userItem-name">
-                                    <a class="link link--primary" href="http://70data.net/" target="_blank">千夜</a>
+                                    <a class="link link--primary" target="_blank">{{post.name}}</a>
                                 </div>
+                                <a href="{{post.link}}">{{post.desc}}</a>
                             </div>
                         </div>
                     </div>
+                    {% empty %}
                     <div class="userItem">
                         <div class="userItem--inner">
-                            <div class="userItem-content">
-                                <img alt='' src='/statics/images/tmp/002.jpeg'
-                                                               class='avatar avatar-64 photo' height='64' width='64'/>
-                                <div class="userItem-name">
-                                    <a class="link link--primary" href="http://cizixs.com/" target="_blank">cizixs</a>
-                                </div>
-                            </div>
+                            <p>还没有添加友情链接</p>
                         </div>
                     </div>
-                    <div class="userItem">
-                        <div class="userItem--inner">
-                            <div class="userItem-content">
-                                <img alt='' src='/statics/images/tmp/003.jpeg'
-                                                               class='avatar avatar-64 photo' height='64' width='64'/>
-                                <div class="userItem-name">
-                                    <a class="link link--primary" href="simpleisbetterthancomplex.com" target="_blank">Vitor Freitas</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="userItem">
-                        <div class="userItem--inner">
-                            <div class="userItem-content">
-                                <img alt='' src='/statics/images/tmp/001.jpeg'
-                                                               class='avatar avatar-64 photo' height='64' width='64'/>
-                                <div class="userItem-name">
-                                    <a class="link link--primary" href="http://xiaorui.cc/" target="_blank">峰云就她了</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

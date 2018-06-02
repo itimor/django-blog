@@ -87,11 +87,13 @@ class Friend(models.Model):
     """
     name = models.CharField(u'名称', max_length=100, default='')
     link = models.URLField(u'链接', default='')
+    cover = models.ImageField(upload_to=PathAndRename("link"), blank=True, verbose_name=u'头像')
+    desc = models.TextField(u'描述', default='未添加描述')
     position = models.SmallIntegerField(u'位置', default=1)
     active = models.BooleanField(u'激活', default=True)
 
     class Meta:
-        ordering = ['-position']
+        ordering = ['position']
         verbose_name = u'友情链接'
         verbose_name_plural = '友情链接'
 
@@ -105,11 +107,11 @@ class Social(models.Model):
     """
     name = models.CharField(u'名称', max_length=10, unique=True)
     url = models.CharField(u'地址', max_length=50, unique=True)
-    ico = models.ImageField(upload_to=PathAndRename("ico"), blank=True, verbose_name=u'图标')
+    cover = models.ImageField(upload_to=PathAndRename("social"), blank=True, verbose_name=u'图标')
     position = models.SmallIntegerField(u'位置', default=1)
 
     class Meta:
-        ordering = ['position']
+        ordering = ['-position']
         verbose_name = u'社交网站'
         verbose_name_plural = u'社交网站'
 
