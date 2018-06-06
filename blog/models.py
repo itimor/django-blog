@@ -8,6 +8,7 @@ from uuslug import slugify
 from blog.storage import PathAndRename
 from django.urls import reverse
 from mdeditor.fields import MDTextField
+from taggit.managers import TaggableManager
 
 BlogTypes = (
     ('l', '星辰大海'),
@@ -29,11 +30,10 @@ class Article(models.Model):
     is_top = models.BooleanField(u'置顶', default=False)
     publish_time = models.DateTimeField(u'发布时间', null=True)
     views = models.PositiveIntegerField(u'浏览量', default=0)
-    tags = models.ManyToManyField('Tag', related_name='tags', null=True, blank=True, verbose_name=u'标签')
+    tags = TaggableManager(blank=True)
 
     class Meta:
         verbose_name = u'文章'
-        verbose_name_plural = u'文章'
         ordering = ['-is_top', '-update_time']
 
     def save(self, *args, **kwargs):
@@ -66,21 +66,6 @@ class Article(models.Model):
         return reverse('blog:detail', kwargs={'slug': self.slug})
 
 
-class Tag(models.Model):
-    """
-    标签
-    """
-    name = models.CharField(u'名称', max_length=50, db_index=True, unique=True)
-
-    class Meta:
-        ordering = ['id']
-        verbose_name = u'标签'
-        verbose_name_plural = u'标签'
-
-    def __str__(self):
-        return self.name
-
-
 class Friend(models.Model):
     """
     友情链接
@@ -95,7 +80,6 @@ class Friend(models.Model):
     class Meta:
         ordering = ['position']
         verbose_name = u'友情链接'
-        verbose_name_plural = '友情链接'
 
     def __str__(self):
         return self.name
@@ -113,7 +97,6 @@ class Social(models.Model):
     class Meta:
         ordering = ['-position']
         verbose_name = u'社交网站'
-        verbose_name_plural = u'社交网站'
 
     def __str__(self):
         return self.name

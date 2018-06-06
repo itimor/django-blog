@@ -3,7 +3,7 @@
 
 from django.contrib import admin
 from django.db import models
-from blog.models import Article, Tag, Friend, Social
+from blog.models import Article, Friend, Social
 from mdeditor.widgets import MDEditorWidget
 
 
@@ -21,10 +21,6 @@ class ArticleAdmin(admin.ModelAdmin):
     }
 
 
-class TagAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-
-
 class FriendAdmin(admin.ModelAdmin):
     list_display = ('name', 'link', 'position', 'active')
 
@@ -34,6 +30,5 @@ class SocialAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(Tag, TagAdmin)
 admin.site.register(Friend, FriendAdmin)
 admin.site.register(Social, SocialAdmin)

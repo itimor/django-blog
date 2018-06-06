@@ -2,7 +2,7 @@
 # author: itimor
 
 from django import forms
-from blog.models import Article, Tag, BlogTypes
+from blog.models import Article, BlogTypes
 from mdeditor.fields import MDTextFormField
 
 
@@ -11,7 +11,7 @@ class ArticleAddForm(forms.Form):
     cover = forms.ImageField(label=u'封面', )
     content = MDTextFormField(label=u'内容', min_length=50)
     type = forms.ChoiceField(label=u'分类', choices=BlogTypes)
-    tags = forms.ModelMultipleChoiceField(label='标签', queryset=Tag.objects.all(), widget=forms.CheckboxSelectMultiple)
+    tags = forms.CharField(label=u'标签', max_length=50)
 
     def save(self):
         cd = self.cleaned_data

@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 
-from blog.models import Article, Tag, Friend
+from blog.models import Article, Friend
 from utils.pagination import get_pagination
 import markdown
 import operator
@@ -130,21 +130,6 @@ class ArchiveView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ArchiveView, self).get_context_data(**kwargs)
         return context
-
-
-class TagView(ListView):
-    """
-    首页
-    """
-    template_name = 'tag.html'
-    context_object_name = "tag_posts"
-    queryset = Article.objects.filter(published=True)
-
-    def get_queryset(self):
-        tag = self.kwargs.get('tag')
-        context = super(TagView, self).get_queryset().filter(tags__name=tag)
-        tags = Tag.objects.all()
-        return {'tags': tags, 'tag': tag, 'posts': context}
 
 
 class LinkView(ListView):

@@ -11,7 +11,7 @@
             <header class="post_header">
                 <h1 class="post_title">{{ post.name }}
                     {% if user.is_staff %}
-                        <a href="/post/edit/{{ post.name }}"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>
+                        <a href="/post/edit/{{ post.slug }}"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>
                     {% endif %}
                 </h1>
             </header>
@@ -49,7 +49,7 @@
                     <a class="pull-left preview-content bold" href="{{ prev_post.get_absolute_url }}"><span>{{ prev_post.name }}</span></a>
                 {% else %}
                     <div class="pull-left featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
-                    <a class="pull-left preview-content bold" href="#"><span>海底月是天上月</span></a>
+                    <a class="pull-left preview-content bold" href="#"><span>拜托！泥垢了</span></a>
                 {% endif %}
             </div>
         </div>
@@ -65,7 +65,7 @@
                     <a class="pull-right preview-content bold" href="{{ next_post.get_absolute_url }}"><span>{{ next_post.name }}</span></a>
                 {% else %}
                      <div class="pull-right featuredImg" style="background-image:url('/statics/images/empty.png');"></div>
-                    <a class="pull-right preview-content bold" href="#"><span>我也是有底线的</span></a>
+                    <a class="pull-right preview-content bold" href="#"><span>哼！我也是有底线的</span></a>
                 {% endif %}
             </div>
         </div>
