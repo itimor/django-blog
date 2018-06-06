@@ -2509,8 +2509,9 @@ li.active > a {
     margin-bottom: 10px;
 }
 
-.publish input[name='name'] {
-    border-bottom: solid 1px #f5f5f5;
+.publish input[name='name'],
+.publish input[name='tags'] {
+    border-bottom: solid 1px #baabf9;
     padding: 2px 12px;
     font-size: 16px;
     font-weight: 700;
