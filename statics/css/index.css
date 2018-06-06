@@ -1478,7 +1478,7 @@ h2.archive-title span:after {
 }
 
 .pagination li a {
-    color: black!important;
+    color: black !important;
     display: block;
 }
 
@@ -2211,10 +2211,10 @@ h2.archive-title span:after {
 
 .userItem-content:hover > a {
     visibility: visible;
-    color: white!important;
+    color: white !important;
 }
 
-.userItem-content>a {
+.userItem-content > a {
     visibility: hidden;
     color: white;
     background-color: rgba(0, 0, 0, 0.65);
@@ -2503,6 +2503,18 @@ li.active > a {
     background: #ffffff;
     border-radius: 10px;
     padding: 20px 10px;
+}
+
+.publish p {
+    margin-bottom: 10px;
+}
+
+.publish input[name='name'],
+.publish input[name='tags'] {
+    border-bottom: solid 1px #b2d6eb;
+    padding: 2px 12px;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .form-error p {

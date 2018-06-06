@@ -1,5 +1,4 @@
 Django==2.0.5
-django-crispy-forms==1.7.2
 django-mdeditor==0.1.4
 django-taggit==0.22.2
 django-uuslug==1.1.8
