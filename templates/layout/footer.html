@@ -4,10 +4,11 @@
         </div>
         <div class="col-xs-4 socialize">
             {% for social in social_list %}
-            <li>
+            <li class="tooltip">
                 <a title="{{social.name}}" class="socialicon" href="{{social.url}}">
-                    <img src="/upload/{{social.cover}}">
+                    <img alt="{{social.name}}" src="/upload/{{social.cover}}">
                 </a>
+                <div class="tooltip-social">{{social.name}}</div>
             </li>
             {% empty %}
             <li>
