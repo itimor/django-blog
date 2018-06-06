@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 
-from blog.models import Article, Friend
+from blog.models import Article, Friend, Social
 from utils.pagination import get_pagination
 import markdown
 import operator
@@ -40,7 +40,17 @@ def server_error(request):
     return render(request, 'error.html', data)
 
 
-class IndexView(ListView):
+class BaseMixin(object):
+    def get_context_data(self, **kwargs):
+        context = super(BaseMixin, self).get_context_data(**kwargs)
+        try:
+            context['social_list'] = Social.objects.all().order_by("-position")[0:4]
+        except Exception as e:
+            print(e)
+        return context
+
+
+class IndexView(BaseMixin, ListView):
     """
     首页
     """
@@ -67,7 +77,7 @@ class IndexView(ListView):
         return context
 
 
-class BlogDetailView(DetailView):
+class BlogDetailView(BaseMixin, DetailView):
     """
     文章详情
     """
@@ -119,7 +129,7 @@ class BlogDetailView(DetailView):
         return context
 
 
-class ArchiveView(ListView):
+class ArchiveView(BaseMixin, ListView):
     """
     首页
     """
@@ -132,7 +142,7 @@ class ArchiveView(ListView):
         return context
 
 
-class LinkView(ListView):
+class LinkView(BaseMixin, ListView):
     """
     首页
     """
@@ -145,7 +155,7 @@ class LinkView(ListView):
         return context
 
 
-class GustView(ListView):
+class GustView(BaseMixin, ListView):
     """
     首页
     """
@@ -158,7 +168,7 @@ class GustView(ListView):
         return context
 
 
-class SearchView(ListView):
+class SearchView(BaseMixin, ListView):
     """
     首页
     """
@@ -199,7 +209,7 @@ class AdminRequiredMixin(object):
         return staff_member_required(view)
 
 
-class ArticleAddView(LoginRequiredMixin, FormView):
+class ArticleAddView(BaseMixin, LoginRequiredMixin, FormView):
     template_name = 'article_add.html'
     form_class = ArticleAddForm
     success_url = '/photo'

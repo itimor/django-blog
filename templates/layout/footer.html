@@ -3,6 +3,13 @@
         <div class="col-xs-4">
         </div>
         <div class="col-xs-4 socialize">
+            {% for social in social_list %}
+            <li>
+                <a title="{{social.name}}" class="socialicon" href="{{social.url}}">
+                    <img src="/upload/{{social.cover}}">
+                </a>
+            </li>
+            {% empty %}
             <li>
                 <a title="weibo" class="socialicon" href="https://weibo.com/u/2646775602">
                     <img src="/statics/images/svg/weibo.svg">
@@ -18,6 +25,7 @@
                     <img src="/statics/images/svg/jianshu.svg">
                 </a>
             </li>
+            {% endfor %}
         </div>
         <div class="col-xs-4">
         </div>
@@ -37,6 +45,6 @@
     <script type='text/javascript' src='/statics/js/modernizr.js'></script>
     <script type='text/javascript' src='/statics/js/jquery.hoverdir.js'></script>
     <script type='text/javascript' src='/statics/js/chromagallery.min.js'></script>
-    
+
     <script type='text/javascript' src='/statics/js/script.js'></script>
 </footer>

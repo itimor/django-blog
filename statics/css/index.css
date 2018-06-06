@@ -514,12 +514,6 @@ input[type="search"]::-webkit-search-decoration {
     text-align: center;
 }
 
-.footer-info div a {
-    color: black;
-    display: block;
-    margin: 10px auto;
-}
-
 .socialize li {
     display: inline-block;
 }
