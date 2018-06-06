@@ -3,7 +3,7 @@
 
 from django.core.exceptions import PermissionDenied
 from django.views.generic.detail import DetailView
-from django.views.generic.list import ListView
+from django.views.generic.list import ListView, View
 from django.views.generic.edit import FormView
 
 from blog.models import Article, Friend, Social
@@ -209,7 +209,7 @@ class AdminRequiredMixin(object):
         return staff_member_required(view)
 
 
-class ArticleAddView(BaseMixin, LoginRequiredMixin, FormView):
+class ArticleAddView(BaseMixin, LoginRequiredMixin, View):
     template_name = 'article_add.html'
     form_class = ArticleAddForm
     success_url = '/photo'

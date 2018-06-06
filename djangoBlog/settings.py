@@ -16,7 +16,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'taggit',           # 第三方tag
-    'crispy_forms',     # 美化forms
     'mdeditor',
     'blog',
     'photo',
@@ -123,4 +122,4 @@ MDEDITOR_CONFIGS = {
     },
 }
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+TAGGIT_CASE_INSENSITIVE = True

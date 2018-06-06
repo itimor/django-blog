@@ -33,8 +33,9 @@ class Article(models.Model):
     tags = TaggableManager(blank=True)
 
     class Meta:
-        verbose_name = u'文章'
         ordering = ['-is_top', '-update_time']
+        verbose_name = u'文章'
+        verbose_name_plural = u'文章'
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -80,6 +81,7 @@ class Friend(models.Model):
     class Meta:
         ordering = ['position']
         verbose_name = u'友情链接'
+        verbose_name_plural = u'友情链接'
 
     def __str__(self):
         return self.name
@@ -97,6 +99,7 @@ class Social(models.Model):
     class Meta:
         ordering = ['-position']
         verbose_name = u'社交网站'
+        verbose_name_plural = u'社交网站'
 
     def __str__(self):
         return self.name
