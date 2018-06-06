@@ -11,7 +11,8 @@
             <header class="post_header">
                 <h1 class="post_title">{{ post.name }}
                     {% if user.is_staff %}
-                        <a href="/post/edit/{{ post.slug }}"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>
+                        <a href="/admin/blog/article/{{ post.id }}/change/"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>
+                        <!--<a href="/post/edit/{{ post.slug }}"><img src="/statics/images/svg/edit.svg" width="20" height="20"></a>-->
                     {% endif %}
                 </h1>
             </header>

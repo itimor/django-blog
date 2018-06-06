@@ -20,7 +20,7 @@ BlogTypes = (
 class Article(models.Model):
     name = models.CharField(u'标题', max_length=150, unique=True)
     slug = models.SlugField(u'链接', default='#', null=True, blank=True)
-    cover = models.ImageField(upload_to=PathAndRename("cover"), blank=True, verbose_name=u'封面')
+    cover = models.ImageField(upload_to=PathAndRename("cover"), verbose_name=u'封面')
     type = models.CharField(max_length=1, choices=BlogTypes, default='l', verbose_name=u'类型')
     content = MDTextField(u'内容', )
     excerpt = models.TextField(u'摘要', )
@@ -30,7 +30,7 @@ class Article(models.Model):
     is_top = models.BooleanField(u'置顶', default=False)
     publish_time = models.DateTimeField(u'发布时间', null=True)
     views = models.PositiveIntegerField(u'浏览量', default=0)
-    tags = TaggableManager(blank=True)
+    tags = TaggableManager(blank=True, help_text='标签用英文逗号隔开')
 
     class Meta:
         ordering = ['-is_top', '-update_time']
