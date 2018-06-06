@@ -15,7 +15,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'taggit',
+    'taggit',           # 第三方tag
+    'crispy_forms',     # 美化forms
     'mdeditor',
     'blog',
     'photo',
@@ -121,3 +122,5 @@ MDEDITOR_CONFIGS = {
         'flow_chart': True,
     },
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

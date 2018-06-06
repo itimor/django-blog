@@ -1,5 +1,5 @@
 {% extends "layout/base.html" %}
-
+{% load crispy_forms_tags %}
 {% block title %}
 | 新建文章
 {% endblock %}
@@ -15,7 +15,7 @@
                 <form action="" method="post">
                     {% csrf_token %}
                     {{ form.media }}
-                    {{ form.as_p }}
+                    {% crispy form %}
                     <button type="submit" class="btn btn-primary">发 布</button>
                 </form>
             </div>

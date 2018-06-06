@@ -459,7 +459,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 #main {
-    background: #f5f5f5;
+    background: #ffffff;
     position: relative;
 }
 
@@ -1458,27 +1458,27 @@ h2.archive-title span:after {
     position: relative;
     display: block;
     text-align: center;
-    width: 300px;
+    width: 400px;
     margin: 0 auto;
 }
 
 .pagination li {
     display: inline-block;
-    color: black;
-    min-width: 30px;
-    height: 30px;
-    line-height: 30px;
+    min-width: 35px;
+    height: 35px;
+    line-height: 35px;
     text-align: center;
     font-size: 15px;
     border-radius: 50%;
-    background: rgb(255, 255, 255);
+    background: #eee;
 }
 
 .pagination li.active {
-    background: rgba(0, 0, 1, 0.15);
+    background: #B7B7E4;
 }
 
 .pagination li a {
+    color: black!important;
     display: block;
 }
 
@@ -2503,25 +2503,6 @@ li.active > a {
     background: #ffffff;
     border-radius: 10px;
     padding: 20px 10px;
-}
-
-.publish p {
-    margin-bottom: 10px;
-}
-
-.publish input[name='name'],
-.publish input[name='tags'] {
-    border-bottom: solid 1px #baabf9;
-    padding: 2px 12px;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.publish select {
-    border-radius: 5px;
-    padding: 2px 12px;
-    font-size: 16px;
-    height: 30px;
 }
 
 .form-error p {
