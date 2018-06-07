@@ -10,3 +10,4 @@ dnsapi_key.py
 omsBackend/zbmanager/zabbix_conf.py
 staticfiles/
 /upload/photo/
+/upload/post/
