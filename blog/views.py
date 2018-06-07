@@ -158,7 +158,7 @@ class ArchiveView(BaseMixin, ListView):
     """
     template_name = 'archive.html'
     context_object_name = "archive_posts"
-    queryset = Article.objects.filter(published=True)
+    queryset = Article.objects.filter(published=True).order_by("-publish_time")
 
     def get_context_data(self, **kwargs):
         context = super(ArchiveView, self).get_context_data(**kwargs)
