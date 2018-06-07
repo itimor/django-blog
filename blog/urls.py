@@ -24,5 +24,4 @@ urlpatterns = [
     url(r'^link/', LinkView.as_view(), name="link"),
     url(r'^gust/', GustView.as_view(), name="gust"),
     url(r'^search', SearchView.as_view(), name="search"),
-    url(r'^post/view/comments/', include('django_comments.urls')),
 ]

@@ -15,13 +15,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'taggit',           # 第三方tag
     'mdeditor',
     'blog',
     'photo',
-    'threadedcomments',
     'django_comments',
-    'django.contrib.sites',
+    'django_comments_xtd',
 ]
 
 
@@ -127,3 +127,14 @@ MDEDITOR_CONFIGS = {
 }
 
 TAGGIT_CASE_INSENSITIVE = True
+SITE_ID = 1
+
+from .django_config import EMAIL_INFO
+
+EMAIL_HOST = EMAIL_INFO["EMAIL_HOST"]
+EMAIL_PORT = EMAIL_INFO["EMAIL_PORT"]
+EMAIL_HOST_USER = EMAIL_INFO["EMAIL_HOST_USER"]
+EMAIL_HOST_PASSWORD = EMAIL_INFO["EMAIL_HOST_PASSWORD"]
+DEFAULT_FROM_EMAIL = EMAIL_INFO["DEFAULT_FROM_EMAIL"]
+
+COMMENTS_XTD_FROM_EMAIL = "blog@itimor.cs"

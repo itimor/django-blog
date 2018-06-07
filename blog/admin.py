@@ -8,7 +8,7 @@ from mdeditor.widgets import MDEditorWidget
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('name', 'type', 'published', 'is_top', 'create_time', 'publish_time', 'views')
+    list_display = ('id', 'name', 'type', 'published', 'is_top', 'create_time', 'publish_time', 'views')
     list_filter = ('published', 'is_top', 'publish_time', 'views')
     fields = ('name', 'cover', 'content', 'excerpt', 'type', 'published', 'is_top', 'tags',)
     readonly_fields = ('excerpt',)

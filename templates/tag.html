@@ -43,7 +43,7 @@
             </div>
             {% else %}
             <div class="tags">
-                {% for tag in tag_posts %}
+                {% for tag in tag_posts.json_tags %}
                 <a href="/tag/{{ tag.slug }}" class="tag">{{ tag.name }}({{tag.count}})</a>
                 {% endfor %}
             </div>
