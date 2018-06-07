@@ -9,4 +9,4 @@ EMAIL_INFO = {
     'DEFAULT_FROM_EMAIL': "djangoblog <djangoblog@itimor.cs>",
 }
 
-a = 2
+a = 4

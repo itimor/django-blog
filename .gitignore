@@ -11,4 +11,4 @@ omsBackend/zbmanager/zabbix_conf.py
 staticfiles/
 /upload/photo/
 /upload/post/
-django_config.py
+/djangoBlog/django_config.py
