@@ -85,7 +85,7 @@ class BlogDetailView(BaseMixin, DetailView):
     queryset = Article.objects.filter(published=True)
 
     def get_object(self, queryset=None):
-        context = super(BlogDetailView, self).get_object(queryset)
+        context = super(BlogDetailView, self).get_object()
 
         if not context.published:
             raise PermissionDenied
@@ -140,13 +140,16 @@ class TagView(BaseMixin, ListView):
         tag = self.kwargs.get('tag')
 
         if tag:
-            context = super(TagView, self).get_queryset().filter(tags__name=tag)
+            context = super(TagView, self).get_queryset().filter(tags__slug=tag)
             return {'tag': tag, 'posts': context}
         else:
-            from django.core import serializers
+            from django.db.models import Count
             context = Tag.objects.all()
-            json_tags = serializers.serialize("json", context)
-            return {'tags': context, 'json_tags': json_tags}
+            queryset = context.annotate(num_times=Count('taggit_taggeditem_items'))
+            json_tags = []
+            for tag in queryset:
+                json_tags.append({"name": tag.name, "slug": tag.slug, "count": tag.num_times})
+            return json_tags
 
 
 class ArchiveView(BaseMixin, ListView):

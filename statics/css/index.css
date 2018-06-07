@@ -512,6 +512,7 @@ input[type="search"]::-webkit-search-decoration {
 .footer-info div {
     display: inline-block;
     text-align: center;
+    width: 33.33333333333333%
 }
 
 .socialize li {
@@ -538,9 +539,9 @@ input[type="search"]::-webkit-search-decoration {
 	position: absolute;
 	z-index: 999;
 	visibility: hidden;
-	width: auto;
 	padding: 3px 10px;
     color: #ffffff;
+    width: auto!important;
 	background: rgba(0, 0, 0, 0.49);
 	bottom: 60px;
 	left: -10px;
@@ -558,7 +559,7 @@ input[type="search"]::-webkit-search-decoration {
 	-webkit-transform: translate3d(0, 10px, 0);
 	transform: translate3d(0, 10px, 0);
 	opacity: 1;
-	visibility: visible
+	visibility: visible;
 }
 
 .tooltip-social::before,
@@ -571,7 +572,7 @@ input[type="search"]::-webkit-search-decoration {
 	margin-left: -5px;
 	position: absolute;
 	bottom: -5px;
-	left: 50%
+	left: 50%;
 }
 
 .cr {

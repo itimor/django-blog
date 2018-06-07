@@ -43,8 +43,8 @@
             </div>
             {% else %}
             <div class="tags">
-                {% for tag in tag_posts.tags %}
-                <a href="/tag/{{ tag.name }}" class="tag">{{ tag.name }}</a>
+                {% for tag in tag_posts %}
+                <a href="/tag/{{ tag.slug }}" class="tag">{{ tag.name }}({{tag.count}})</a>
                 {% endfor %}
             </div>
             <div id='tag-cloud'></div>
@@ -58,11 +58,10 @@
 <script type='text/javascript' src='/statics/js/jquery.min.js'></script>
 <script type='text/javascript' src='/statics/js/jquery.svg3dtagcloud.min.js'></script>
 <script>
-    var tags = {{ tag_posts.json_tags|safe }};
+    var tags = {{ tag_posts|safe }};
     var entries = []
     for(var tag of tags) {
-        var data = tag.fields
-        entries.push({label: data.name, url: data.slug, target: '_top'})
+        entries.push({label: tag.name + '(' + tag.count + ')', url: tag.slug, target: '_top'})
     }
     var settings = {
         entries: entries,
@@ -84,9 +83,7 @@
         fontStyle: 'italic',//italic
         fontStretch: 'expanded',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
         fontToUpperCase: true
-
     };
     $('#tag-cloud').svg3DTagCloud(settings);
-
 </script>
 {% endblock extScriptFile %}
