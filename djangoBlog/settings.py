@@ -113,7 +113,7 @@ LOGOUT_REDIRECT_URL = '/'
 MDEDITOR_CONFIGS = {
     'default': {
         'upload_image_formats': ["jpg", "jpeg", "gif", "png", "bmp", "webp"],  # image upload format type
-        'image_floder': 'cover',
+        'image_floder': 'post',
         'toolbar': ["image", "code-block", "table", "datetime",
                     "||", "preview", "watch", "fullscreen"],  # custom edit box toolbar
         'preview_theme': 'default',  # Preview area theme, dark / default

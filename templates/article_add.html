@@ -23,3 +23,26 @@
     </div>
 </div>
 {% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    document.onpaste = function (event) {
+        var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+        //console.log(JSON.stringify(items)); // will give you the mime types
+        for (var index in items) {
+            var item = items[index];
+            if (item.kind === 'file') {
+                var blob = item.getAsFile();
+                console.log(blob)
+                //ajax上传图片
+                $.post("{:url('/photo/upload/')}", {base: blob}, function (ret) {
+                    if (ret.code === 1) {
+                        //新一行的图片显示
+                        MarkDownEditor.insertValue("\n![" + ret.data.title + "](" + ret.data.path + ")");
+                    }
+                });
+            }
+        }
+    }
+</script>
+{% endblock %}

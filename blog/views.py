@@ -2,9 +2,7 @@
 # author: itimor
 
 from django.core.exceptions import PermissionDenied
-from django.views.generic.detail import DetailView
-from django.views.generic.list import ListView, View
-from django.views.generic.edit import FormView
+from django.views.generic import ListView, DetailView, FormView
 
 from blog.models import Article, Friend, Social
 from utils.pagination import get_pagination
@@ -17,6 +15,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.views import login_required
+from taggit.models import Tag
 
 
 # 自定义错误页面
@@ -129,6 +128,21 @@ class BlogDetailView(BaseMixin, DetailView):
         return context
 
 
+class TagView(BaseMixin, ListView):
+    """
+    首页
+    """
+    template_name = 'tag.html'
+    context_object_name = "tag_posts"
+    queryset = Article.objects.filter(published=True)
+
+    def get_queryset(self):
+        tag = self.kwargs.get('tag')
+        context = super(TagView, self).get_queryset().filter(tags__name=tag)
+        tags = Tag.objects.all()
+        return {'tags': tags, 'tag': tag, 'posts': context}
+
+
 class ArchiveView(BaseMixin, ListView):
     """
     首页
@@ -209,10 +223,10 @@ class AdminRequiredMixin(object):
         return staff_member_required(view)
 
 
-class ArticleAddView(BaseMixin, LoginRequiredMixin, View):
+class ArticleAddView(BaseMixin, LoginRequiredMixin, FormView):
     template_name = 'article_add.html'
     form_class = ArticleAddForm
-    success_url = '/photo'
+    success_url = '/'
 
     @csrf_exempt
     def form_valid(self, form):
