@@ -4,6 +4,17 @@
 | 标签
 {% endblock %}
 
+{% block extra_head %}
+<link href="/statics/css/3dtag.css" rel="stylesheet" type="text/css" media="all"/>
+<style type="text/css">
+    #tag-cloud {
+        width: 640px;
+        height: 480px;
+        margin: 0 auto;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div id="main" class="content">
     <div class="container">
@@ -36,8 +47,46 @@
                 <a href="/tag/{{ tag.name }}" class="tag">{{ tag.name }}</a>
                 {% endfor %}
             </div>
+            <div id='tag-cloud'></div>
             {% endif %}
         </section>
     </div>
 </div>
 {% endblock %}
+
+{% block extScriptFile %}
+<script type='text/javascript' src='/statics/js/jquery.min.js'></script>
+<script type='text/javascript' src='/statics/js/jquery.svg3dtagcloud.min.js'></script>
+<script>
+    var tags = {{ tag_posts.json_tags|safe }};
+    var entries = []
+    for(var tag of tags) {
+        var data = tag.fields
+        entries.push({label: data.name, url: data.slug, target: '_top'})
+    }
+    var settings = {
+        entries: entries,
+        width: 640,
+        height: 480,
+        radius: '65%',
+        radiusMin: 75,
+        bgDraw: true,
+        bgColor: '#ffffff',
+        opacityOver: 1.00,
+        opacityOut: 0.05,
+        opacitySpeed: 6,
+        fov: 800,
+        speed: 0.5,
+        fontFamily: 'Oswald, Arial, sans-serif',
+        fontSize: '15',
+        fontColor: '#b170ff',
+        fontWeight: 'normal',//bold
+        fontStyle: 'normal',//italic
+        fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+        fontToUpperCase: true
+
+    };
+    $('#tag-cloud').svg3DTagCloud(settings);
+
+</script>
+{% endblock extScriptFile %}

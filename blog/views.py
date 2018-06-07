@@ -3,7 +3,7 @@
 
 from django.core.exceptions import PermissionDenied
 from django.views.generic import ListView, DetailView, FormView
-
+from django.http import JsonResponse
 from blog.models import Article, Friend, Social
 from utils.pagination import get_pagination
 import markdown
@@ -143,8 +143,10 @@ class TagView(BaseMixin, ListView):
             context = super(TagView, self).get_queryset().filter(tags__name=tag)
             return {'tag': tag, 'posts': context}
         else:
+            from django.core import serializers
             context = Tag.objects.all()
-            return {'tags': context}
+            json_tags = serializers.serialize("json", context)
+            return {'tags': context, 'json_tags': json_tags}
 
 
 class ArchiveView(BaseMixin, ListView):
