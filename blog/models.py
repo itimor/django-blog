@@ -28,6 +28,7 @@ class Article(models.Model):
     update_time = models.DateTimeField(u'修改时间')
     published = models.BooleanField(u'发布', default=True)
     is_top = models.BooleanField(u'置顶', default=False)
+    allow_comments = models.BooleanField('开启评论', default=True)
     publish_time = models.DateTimeField(u'发布时间', null=True)
     views = models.PositiveIntegerField(u'浏览量', default=0)
     tags = TaggableManager(blank=True, help_text='标签用英文逗号隔开')

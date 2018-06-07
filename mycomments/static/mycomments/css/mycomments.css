@@ -1,0 +1,37 @@
+#div_id_honeypot {
+    /* Hide the honeypot from django_comments by default */
+    display: none;
+}
+
+#cancel_reply {
+    display: none;
+}
+
+.media #cancel_reply {
+    display: inline;
+}
+
+.has-preview-loaded #cancel_reply {
+    display: inline;
+}
+
+.wrap-comment-preview .media:first-child {
+    margin-top: 15px;
+}
+
+.comment-waiting img.ajax-loader {
+    display: inline;
+}
+
+.comments #form-comment {
+    margin-top: 10px;
+}
+
+div.comment-preview .media-body {
+    background-color: #FFFFCC;
+}
+
+.media-object img{
+    width: 64px!important;
+    border-radius: 100%!important;
+}

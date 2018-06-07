@@ -18,10 +18,12 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'taggit',           # 第三方tag
     'mdeditor',
+    'crispy_forms',
+    'mycomments',
+    'threadedcomments',
+    'django_comments',
     'blog',
     'photo',
-    'django_comments',
-    'django_comments_xtd',
 ]
 
 
@@ -98,13 +100,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/statics/'
-
-if DEBUG:
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, "statics"),)
-    # 收集静态文件 python manage.py collectstatic
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-else:
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "statics"),)
 
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
@@ -128,5 +124,5 @@ MDEDITOR_CONFIGS = {
 
 TAGGIT_CASE_INSENSITIVE = True
 SITE_ID = 1
-
-COMMENTS_XTD_FROM_EMAIL = "blog@itimor.cs"
+COMMENTS_APP = 'mycomments'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

@@ -1,5 +1,5 @@
 {% extends "layout/base.html" %}
-{% load comments %}
+{% load threadedcomments_tags %}
 {% block title %}
 | {{ post.name }}
 {% endblock %}
@@ -73,10 +73,12 @@
         </div>
     </div>
 
-    {% if comment_count %}
     <div class="comments">
-        {% render_comment_list for object %}
+        {% render_comment_list for post %}
     </div>
+
+    {% if object.allow_comments %}
+    {% render_comment_form for object %}
     {% endif %}
 </div>
 

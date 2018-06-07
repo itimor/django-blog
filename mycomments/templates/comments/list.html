@@ -1,0 +1,63 @@
+{% load threadedcomments_tags %}
+{% load staticfiles %}
+
+<div class="comments_length">
+    <p>{{ comment_list|length }} Comments</p>
+</div>
+
+<div class="comments">
+    {% for comment in comment_list|fill_tree|annotate_tree %}
+        {% comment %}
+        {% ifchanged comment.parent_id %}
+            {% if comment.parent_id and not comment.open %}
+                <!-- start changed pid  -->
+                {# 上一个评论在深层, 这一个评论在上一层嵌套(非顶层)评论结束 #}
+                </div>
+                </div>
+                <!-- end changed pid  -->
+            {% endif %}
+        {% else %}
+            {% if comment.parent_id %}
+                <!-- start not changed pid  -->
+                {# 在同一层嵌套(非顶层)评论结束 #}
+                </div>
+                </div>
+                <!-- end not changed pid  -->
+            {% endif %}
+        {% endifchanged %}
+        The above logic can be simplified.
+        {% endcomment %}
+    {% if comment.parent_id and not comment.open %}
+        <div class="wrap-comment-preview"></div>
+        <!-- return to outer(non-root) level  -->
+        </div>
+        </div>
+        <!-- end return to outer(non-root) level  -->
+    {% endif %}
+    <div class="media">
+        <a class="pull-left" href="#">
+            {% if comment.user and comment.user.profile.avatar %}
+                <img class="media-object" src="{{ comment.user.profile.avatar.url }}" alt="">
+            {% else %}
+            <img class="media-object" src="/statics/images/favicon.png"alt="">
+            {% endif %}
+        </a>
+        <div class="media-body" id="c{{ comment.id }}">{# c## is used by the absolute URL of the Comment model, so keep that as it is. #}
+            <h4 class="media-heading">{{ comment.user_name }}
+                <small>
+                    {{ comment.submit_date }}
+                    | <a href="#c{{ comment.id }}" data-comment-id="{{ comment.id }}" class="comment_reply_link">Reply</a>
+                </small>
+            </h4>
+                {{ comment.comment|linebreaks }}
+            {% for close in comment.close %}
+            <div class="wrap-comment-preview"></div>
+            <!-- start close  -->
+            {# 从深层返回上层嵌套评论结束 #}
+                </div></div>
+            <!-- end close  -->
+            {% endfor %}
+
+    {% endfor %}
+    <div class="wrap-comment-preview"></div>
+</div>
