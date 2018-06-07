@@ -4,7 +4,7 @@
         {% if comment.user and comment.user.profile.avatar %}
             <img class="media-object" src="{{ comment.user.profile.avatar.url }}"alt="">
         {% else %}
-            <img class="media-object" src="/statics/images/favicon.png" alt="">
+            <img class="media-object" src="{% static 'mycomments/img/avatar.png' %}" alt="">
         {% endif %}
     </a>
     <div class="media-body"
