@@ -138,9 +138,13 @@ class TagView(BaseMixin, ListView):
 
     def get_queryset(self):
         tag = self.kwargs.get('tag')
-        context = super(TagView, self).get_queryset().filter(tags__name=tag)
-        tags = Tag.objects.all()
-        return {'tags': tags, 'tag': tag, 'posts': context}
+
+        if tag:
+            context = super(TagView, self).get_queryset().filter(tags__name=tag)
+            return {'tag': tag, 'posts': context}
+        else:
+            context = Tag.objects.all()
+            return {'tags': context}
 
 
 class ArchiveView(BaseMixin, ListView):

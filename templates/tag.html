@@ -9,13 +9,14 @@
     <div class="container">
         <section class="post_content" itemscope itemtype="http://schema.org/Article">
             <header class="post_header">
-                <h1 class="post_title">标签 <span>{{tag_posts.tag}}</span>(<a href="#">All</a>)</h1>
+                <h1 class="post_title">标签
+                    {% if tag_posts.tag %}
+                    <span>{{tag_posts.tag}}</span>(<a href="/tag/">All</a>)
+                    {% endif %}
+                </h1>
             </header>
-            <!--<div class="tags">-->
-                <!--{% for tag in tag_posts.tags %}-->
-                <!--<a href="tag/{{ tag.name }}" class="tag">{{ tag.name }}</a>-->
-                <!--{% endfor %}-->
-            <!--</div>-->
+
+            {% if tag_posts.tag %}
             <div class="post-Archive">
                 <div id="tags">
                     <div class='archive-title'>
@@ -29,6 +30,13 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            <div class="tags">
+                {% for tag in tag_posts.tags %}
+                <a href="/tag/{{ tag.name }}" class="tag">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
         </section>
     </div>
 </div>

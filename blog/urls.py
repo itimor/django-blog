@@ -16,11 +16,12 @@ app_name = 'blog'
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
     url(r"^post/view/(?P<slug>[\w,-]+)", BlogDetailView.as_view(), name="detail"),
-    url(r"^post/add", ArticleAddView.as_view(), name="add"),
+    url(r"^post/add/$", ArticleAddView.as_view(), name="add"),
     url(r"^post/edit/(?P<pk>\d+)", BlogDetailView.as_view(), name="edit"),
-    url(r'^tag/(?P<tag>\w+)', TagView.as_view(), name="tag"),
-    url(r'^archive/', ArchiveView.as_view(), name="archive"),
-    url(r'^link', LinkView.as_view(), name="link"),
-    url(r'^gust', GustView.as_view(), name="gust"),
+    url(r'^tag/$', TagView.as_view(), name="tags"),
+    url(r'^tag/(?P<tag>\w+)', TagView.as_view(), name="tag-detail"),
+    url(r'^archive/$', ArchiveView.as_view(), name="archive"),
+    url(r'^link/', LinkView.as_view(), name="link"),
+    url(r'^gust/', GustView.as_view(), name="gust"),
     url(r'^search', SearchView.as_view(), name="search"),
 ]
