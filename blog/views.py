@@ -138,18 +138,18 @@ class TagView(BaseMixin, ListView):
 
     def get_queryset(self):
         tag = self.kwargs.get('tag')
+        json_tags = []
 
         if tag:
             context = super(TagView, self).get_queryset().filter(tags__slug=tag)
-            return {'tag': tag, 'posts': context}
+            return {'tag': tag, 'posts': context, 'json_tags': json_tags}
         else:
             from django.db.models import Count
             context = Tag.objects.all()
             queryset = context.annotate(num_times=Count('taggit_taggeditem_items'))
-            json_tags = []
             for tag in queryset:
                 json_tags.append({"name": tag.name, "slug": tag.slug, "count": tag.num_times})
-            return json_tags
+            return {'json_tags': json_tags}
 
 
 class ArchiveView(BaseMixin, ListView):

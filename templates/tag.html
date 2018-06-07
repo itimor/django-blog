@@ -58,7 +58,7 @@
 <script type='text/javascript' src='/statics/js/jquery.min.js'></script>
 <script type='text/javascript' src='/statics/js/jquery.svg3dtagcloud.min.js'></script>
 <script>
-    var tags = {{ tag_posts|safe }};
+    var tags = {{ tag_posts.json_tags|safe }};
     var entries = []
     for(var tag of tags) {
         entries.push({label: tag.name + '(' + tag.count + ')', url: tag.slug, target: '_top'})
