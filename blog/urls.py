@@ -2,7 +2,7 @@
 # author: itimor
 
 from django.conf.urls import url, include
-from blog.views import IndexView, BlogDetailView, TagView, ArchiveView, LinkView, GustView, SearchView
+from blog.views import IndexView, BlogDetailView, TagView, ArchiveView, LinkView, SearchView
 from blog.views import ArticleAddView
 from blog.views import bad_request, permission_denied, page_not_found, permission_denied
 
@@ -22,6 +22,5 @@ urlpatterns = [
     url(r'^tag/(?P<tag>\w+)', TagView.as_view(), name="tag-detail"),
     url(r'^archive/$', ArchiveView.as_view(), name="archive"),
     url(r'^link/', LinkView.as_view(), name="link"),
-    url(r'^gust/', GustView.as_view(), name="gust"),
     url(r'^search', SearchView.as_view(), name="search"),
 ]

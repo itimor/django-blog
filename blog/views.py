@@ -178,19 +178,6 @@ class LinkView(BaseMixin, ListView):
         return context
 
 
-class GustView(BaseMixin, ListView):
-    """
-    首页
-    """
-    template_name = 'gust.html'
-    context_object_name = "posts"
-    queryset = Article.objects.filter(published=True)
-
-    def get_context_data(self, **kwargs):
-        context = super(GustView, self).get_context_data(**kwargs)
-        return context
-
-
 class SearchView(BaseMixin, ListView):
     """
     首页
