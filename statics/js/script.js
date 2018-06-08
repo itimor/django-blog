@@ -58,7 +58,7 @@ document.body.addEventListener('touchstart', function () {
          delay: 100,
          } */);
 
-        $(function() {
+        $(function () {
             $("body").backTotop({
                 isWindow: true,
                 text: "<img src='/statics/images/svg/recket.svg' width='40' height='40'>",
@@ -69,9 +69,16 @@ document.body.addEventListener('touchstart', function () {
             });
         });
 
+        // Comments open botton
+        $('.btn-slide').click(function () {
+            $('#panel').slideToggle("slow");
+            $(this).toggleClass("active");
+            return false;
+        });
+
         // markdown click img
         var n = 1;
-        $("p img").each(function() {
+        $("p img").each(function () {
             // 让图片不以图集存在
             n++;
             var strA = "<a href='" + this.src + "' data-lightbox='xxoo-" + n + "' data-title='" + this.alt + "'></a>";
@@ -79,19 +86,21 @@ document.body.addEventListener('touchstart', function () {
         });
 
         // 相册
-        $(function() {
-            $(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+        $(function () {
+            $(' #da-thumbs > li ').each(function () {
+                $(this).hoverdir();
+            });
         });
 
         // 相片瀑布流
-        $(function() {
+        $(function () {
             $("#xxoo").chromaGallery({
-		        color:'#000',
-		        gridMargin:15,
-		        maxColumns:5,
-		        dof:true,
-		        screenOpacity:0.8
-		    });
+                color: '#000',
+                gridMargin: 15,
+                maxColumns: 5,
+                dof: true,
+                screenOpacity: 0.8
+            });
         });
 
         // menu active
@@ -135,13 +144,6 @@ document.body.addEventListener('touchstart', function () {
         // Mobile nav button functionality
         $('.menu-dropdown').bind('click', function () {
             $(this).parent().toggleClass('open-page-item');
-        });
-
-        // Comments open botton
-        $('.btn-slide').click(function () {
-            $('#panel').slideToggle("slow");
-            $(this).toggleClass("active");
-            return false;
         });
 
         // Make Ajax Search
@@ -279,6 +281,7 @@ document.body.addEventListener('touchstart', function () {
                 $(this).toggleClass('animation-on');
             }, {offset: 'bottom-in-view'});
         }
+
         //end
     });
 

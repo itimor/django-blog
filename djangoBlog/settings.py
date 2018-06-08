@@ -18,10 +18,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'taggit',           # 第三方tag
     'mdeditor',
-    'crispy_forms',
-    'mycomments',
-    'threadedcomments',
-    'django_comments',
     'blog',
     'photo',
 ]
@@ -129,5 +125,3 @@ MDEDITOR_CONFIGS = {
 
 TAGGIT_CASE_INSENSITIVE = True
 SITE_ID = 1
-COMMENTS_APP = 'mycomments'
-CRISPY_TEMPLATE_PACK = 'bootstrap3'

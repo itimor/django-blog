@@ -465,8 +465,8 @@ input[type="search"]::-webkit-search-decoration {
 
 .container {
     position: relative;
-    padding: 60px 0 20px;
-    margin: 50px 10px;
+    padding: 40px 0 20px 20px;
+    margin: 40px 0 10px 10px;
 }
 
 .decor-wrapper {
@@ -1593,7 +1593,7 @@ h2.archive-title span:after {
     border-style: solid;
     border-color: transparent #eee;
     position: absolute;
-    top: 20px;
+    top: 240px;
     left: 55px;
 }
 

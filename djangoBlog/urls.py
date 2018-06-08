@@ -14,7 +14,6 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'', include('blog.urls')),
     url(r'^photo/', include('photo.urls')),
-    url(r'^comments/', include('mycomments.urls')),
     url(r'mdeditor/', include('mdeditor.urls')),
 ]
 

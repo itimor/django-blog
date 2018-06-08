@@ -539,11 +539,10 @@ a:hover {
 
 hr {
     max-width: 100%;
-    height: 50px;
+    height: 30px;
     background: url(/statics/images/hr.gif) right center no-repeat;
+    margin: 0 auto;
     border: none;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 blockquote {
