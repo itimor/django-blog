@@ -3,6 +3,7 @@
 
 from django.db import models
 from blog.storage import PathAndRename
+from django.utils.html import format_html
 
 
 class PhotoGroup(models.Model):
@@ -31,3 +32,9 @@ class Photo(models.Model):
     class Meta:
         verbose_name = u'照片'
         verbose_name_plural = u'照片'
+
+    def view_img(self):
+        return format_html("<img src='/upload/%s' height='200'/>" % self.photo)
+
+    view_img.short_description = '预览'
+    view_img.allow_tags = True
