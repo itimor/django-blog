@@ -5,6 +5,7 @@
 migrations/
 *.log
 *.out
+*.db
 .vscode/
 dnsapi_key.py
 omsBackend/zbmanager/zabbix_conf.py
