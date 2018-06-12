@@ -5,7 +5,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'libti7mq=88d+s!ds$c7lvg8e38jo*pqwywogpqf_=fl#xl8%4'
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -95,14 +95,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATIC_URL = '/statics/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "statics"),)
 if DEBUG:
-    STATIC_URL = '/statics/'
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, "statics"),)
     # 收集静态文件 python manage.py collectstatic
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-else:
-    STATIC_URL = '/staticfiles/'
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"),)
 
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
