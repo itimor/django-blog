@@ -1,0 +1,27 @@
+.back-to-top {
+    position: relative;
+    display: inline-block;
+    z-index: 999;
+    background: transparent;
+    animation: rocket-w 1.5s ease-in-out alternate infinite;
+}
+
+.back-to-top:hover {
+    content: "快上车，没时间解释了";
+    animation: rocket-w 1.5s ease-in-out alternate infinite;
+}
+
+@-webkit-keyframes rocket-w {
+    25% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
