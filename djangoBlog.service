@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve djangoBlog
+
+[Service]
+ExecStartPre=/bin/bash -c 'mkdir -p /run/uwsgi; chown djangoBlog:nginx /run/uwsgi'
+ExecStart=/bin/bash -c 'cd /data/projects/django-blog; /root/.pyenv/versions/envoms3/bin/uwsgi --ini djangoBlog.ini --touch-reload=/etc/nginx/uwsgi_params'
+Restart=on-failure
+KillSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
